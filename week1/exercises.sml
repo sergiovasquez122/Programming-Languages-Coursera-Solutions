@@ -55,6 +55,19 @@ fun addOpt(x : int option, y : int option) =
   if isSome x andalso isSome y
   then SOME(valOf x + valOf y)
   else NONE
+  (* 7. Write a function addAllOpt : int option list -> int option that given a
+  * list to optional integrs, add those integers that are there *)
+fun addAllOpt(xs : int option list) = 
+  if null xs
+  then NONE
+  else 
+    if null (tl xs)
+    then hd xs
+    else 
+    let val tl_ans = addAllOpt(tl xs)
+    in
+        addOpt(hd xs, tl_ans)
+    end
 (* 8. Write a function any : bool list -> bool that given a
 * list of booleans return true if there is at least one of them that is true,
 * otherwise return false. *)
