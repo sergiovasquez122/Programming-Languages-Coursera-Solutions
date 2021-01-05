@@ -6,6 +6,32 @@ fun alternate(xs : int list) =
   if null xs
   then 0
   else (hd xs) - alternate(tl xs)
+  (* 2. Write a function min_max : int list -> int * int that takes a non-empty
+  * list of numbers, and return a pair (min, max of the min and maximum numbers
+  * of the numbers in the list *)
+fun min_max(xs : int list) = 
+let 
+  fun max_nonempty(xs : int list) = 
+    if null (tl xs) 
+    then hd xs
+    else let val tail_ans = max_nonempty(tl xs)
+         in 
+           if (hd xs) > tail_ans
+           then hd xs
+           else tail_ans
+         end
+  fun min_nonempty(xs : int list) = 
+    if null (tl xs) 
+    then hd xs
+    else let val tail_ans = min_nonempty(tl xs)
+         in 
+           if (hd xs)<> tail_ans
+           then hd xs
+           else tail_ans
+         end
+in
+  (min_nonempty xs, max_nonempty xs)
+end
   (*3. write a function cumsum : int list -> int list that takes a list of
           * numbers and returns a list of the partial sumsof the numbers. *)
 fun cumsum(xs : int list) =
