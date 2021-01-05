@@ -22,3 +22,10 @@ let
 in
   helper(xs, 0)
 end
+(* 8. Write a function any : bool list -> bool that given a
+* list of booleans return true if there is at least one of them that is true,
+* otherwise return false. *)
+fun any(xs : bool list) = 
+  if null xs
+  then false
+  else (hd xs) orelse any(tl xs)
