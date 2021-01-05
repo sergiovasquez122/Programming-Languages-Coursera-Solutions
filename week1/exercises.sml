@@ -29,3 +29,9 @@ fun any(xs : bool list) =
   if null xs
   then false
   else (hd xs) orelse any(tl xs)
+  (* 9. Write a function all : bool list -> bool that given a list of booleans
+  * return true if all of them true, otherwise return false.*)
+fun all(xs : bool list) = 
+  if null xs
+  then true
+  else (hd xs) andalso all(tl xs)
