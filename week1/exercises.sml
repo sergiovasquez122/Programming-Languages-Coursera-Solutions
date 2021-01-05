@@ -81,3 +81,10 @@ fun all(xs : bool list) =
   if null xs
   then true
   else (hd xs) andalso all(tl xs)
+  (* 10. Write a function zip : int list * int list -> int * int list tht given
+  * two lists of integers creates consecutive pairs, and stops when one of the
+  * lists is empty. *)
+fun zip(xs : int list, ys : int list) = 
+  if null xs orelse null ys
+  then []
+  else (hd xs, hd ys) :: zip(tl xs, tl ys)
