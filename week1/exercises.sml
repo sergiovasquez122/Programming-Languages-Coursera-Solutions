@@ -48,6 +48,13 @@ let
 in
   helper(xs, 0)
 end
+(* 6. Write a function addOpt : int option * int option -> int option tht given
+* two optional integers, adds them if they are both present or returns NONE if
+* at least one of the two arguments is NONE *)
+fun addOpt(x : int option, y : int option) = 
+  if isSome x andalso isSome y
+  then SOME(valOf x + valOf y)
+  else NONE
 (* 8. Write a function any : bool list -> bool that given a
 * list of booleans return true if there is at least one of them that is true,
 * otherwise return false. *)
