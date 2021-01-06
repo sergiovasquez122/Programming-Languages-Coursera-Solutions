@@ -329,3 +329,63 @@ fun multiply(xs : (int * int) list) =
     in
       pow(x, y) * multiply(tl xs)
     end
+(* 25. Write a function all_products : (int * int) list -> int list that given a
+* factorization list result from factorize creates a list of all possible
+* products produced from using some or all of those prime factors no more than
+* the number of times they are available.*)
+fun find_elem(xs : int list, x : int) =
+  if null xs
+  then false
+  else x = (hd xs) orelse find_elem(tl xs, x)
+
+fun remove_duplicates(xs : int list) = 
+let fun helper(xs : int list, aux : int list) = 
+if null xs
+then aux
+else 
+  if find_elem(aux, hd xs)
+  then helper(tl xs, aux)
+  else helper(tl xs, (hd xs) :: aux)
+in 
+  helper(xs, [])
+end
+
+fun generate_factors(xs : int list, curr : int) = 
+  if null xs
+  then [curr]
+  else 
+    let val with_hd = curr * (hd xs)
+    val list_with = generate_factors(tl xs, with_hd)
+    val list_without = generate_factors(tl xs, curr)
+    in 
+      list_without @ list_with
+    end
+
+fun unroll_helper(xs : int * int) = 
+  if #2 xs = 0 
+  then []
+  else 
+    let
+        val new_snd = (#2 xs) - 1
+        val fst = (#1 xs)
+    in
+      fst::unroll_helper((fst, new_snd))
+    end
+
+fun unroll(xs : (int * int) list) = 
+  if null xs
+  then []
+  else unroll_helper(hd xs) @ unroll(tl xs)
+
+fun all_products(xs : (int * int) list) = 
+  if null xs
+  then []
+  else 
+    let 
+      val unrolled = unroll(xs)
+      val factors = generate_factors(unrolled, 1) 
+      val factors_no_dups = remove_duplicates(factors)
+      val sorted = qsort(factors_no_dups)
+    in
+      sorted
+    end
