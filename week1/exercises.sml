@@ -88,3 +88,10 @@ fun zip(xs : int list, ys : int list) =
   if null xs orelse null ys
   then []
   else (hd xs, hd ys) :: zip(tl xs, tl ys)
+  (* 12. Lesser challenge: Write a version zipOpt of zip with return type (int *
+  * int) list option. This version should return SOME of a list when the
+  * original lists have teh samelength, and NONE if they do not. *)
+fun zipOpt(xs : int list, ys : int list) = 
+  if length xs <> length ys
+  then NONE
+  else SOME(zip(xs, ys))
