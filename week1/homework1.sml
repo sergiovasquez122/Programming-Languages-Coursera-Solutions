@@ -69,4 +69,13 @@ fun get_nth(xs : string list, n : int) =
   if n = 1
   then hd xs
   else get_nth(tl xs, n - 1)
-
+(* 7. Write a function date_to_string that takes a date and returns a string of
+        * the form January 20, 2013 *)
+fun date_to_string(date : int * int * int) = 
+let 
+  val day = Int.toString(#1 date)
+  val month = Int.toString(#2 date)
+  val year = Int.toString(#3 date)
+in
+  month ^ " " ^ day ^ ", " ^ year
+end
