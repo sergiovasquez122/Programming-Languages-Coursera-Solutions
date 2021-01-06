@@ -105,9 +105,30 @@ fun zip(xs : int list, ys : int list) =
   if null xs orelse null ys
   then []
   else (hd xs, hd ys) :: zip(tl xs, tl ys)
-  (* 12. Lesser challenge: Write a version zipOpt of zip with return type (int *
-  * int) list option. This version should return SOME of a list when the
-  * original lists have the samelength, and NONE if they do not. *)
+(* 11. Challenge: Write a version zipRecycle of zip, where when on lsit is empty
+* it starts recycling from its start until the other list completes *)
+fun zipRecycle(xs : int list, ys : int list) = 
+let 
+  val xs_length = length xs
+  val ys_length = length ys
+  fun helper(xs' : int list, ys' : int list) = 
+      if null xs' andalso xs_length > ys_length 
+      then []
+      else if null ys' andalso xs_length < ys_length
+      then []
+      else if null xs' andalso xs_length < ys_length
+      then (hd xs, hd ys')::helper(tl xs, tl ys')
+      else if null ys' andalso xs_length > ys_length
+      then (hd xs', hd ys)::helper(tl xs', tl ys)
+      else (hd xs', hd ys')::helper(tl xs', tl ys')
+   in
+     if xs_length = ys_length
+     then zip(xs, ys)
+     else helper(xs, ys)
+end
+(* 12. Lesser challenge: Write a version zipOpt of zip with return type (int *
+* int) list option. This version should return SOME of a list when the
+* original lists have the samelength, and NONE if they do not. *)
 fun zipOpt(xs : int list, ys : int list) = 
   if length xs <> length ys
   then NONE
