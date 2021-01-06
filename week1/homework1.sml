@@ -85,12 +85,55 @@ end
 * of the list add to sum or more *)
 fun number_before_reaching_sum(sum : int, xs : int list) = 
 let 
-  fun accum(curr_sum : int, xs : int list) = 
+  fun accum(curr_sum : int, n : int,xs : int list) = 
     if (hd xs) + curr_sum >= sum
-    then curr_sum
-    else accum(curr_sum + (hd xs), tl xs)
+    then n
+    else accum(curr_sum + (hd xs),n + 1, tl xs)
 in
-    accum(0, xs)
+    accum(0, 0,xs)
 end
-(*9. Write a function what_month that takes a day of the year and return what
-* month tha day is in. *)
+(* 9. Write a function what_month that takes a day of the year and return what
+* month that day is in. *)
+fun what_month(day : int) = 
+let 
+  val months_durations_in_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  in 
+   number_before_reaching_sum(day, months_durations_in_days) + 1
+end
+(* 10. Write a unction month_range that takes two days of the year day1 and day2
+* and returns an int list [m1, m2, ..., mn] where m1 is the month day1, m2 is
+* tmonth of day1 +1 and mn is day2 *)
+fun month_range(day1 : int, day2 : int) = 
+  if day1 > day2
+  then []
+  else 
+    let fun helper(from : int, to : int) = 
+    if from = to 
+    then to :: []
+    else from :: helper(from + 1, to)
+    in
+      helper(what_month(day1), what_month(day2))
+    end
+(* 11. Write a function oldest that takes a list of dates and evaluates to an (int *
+* int * int) option. It evaluates to NONE if the list has no dates and SOME d if
+* the date d is the oldest dte in the list*)
+fun oldest(dates : (int * int * int) list) = 
+  if null dates
+  then NONE
+  else 
+    let 
+      fun helper(dates : (int * int * int) list) = 
+        if null (tl dates)
+        then hd dates
+        else 
+          let 
+            val head = hd dates
+            val tl_ans = helper(tl dates)
+          in
+            if is_older(head, tl_ans)
+            then head
+            else tl_ans
+          end
+    in
+      SOME(dates)
+end
