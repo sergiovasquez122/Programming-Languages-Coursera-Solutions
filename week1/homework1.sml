@@ -177,3 +177,29 @@ fun dates_in_months_challenge(dates : (int * int * int) list, months : int list)
       in
         dates_in_month(dates, hd months') @ dates_in_months(dates, tl months')
       end
+(* 13. Write a function reasonable_date that takes a date and determines if it
+* describes a real date in the common era. *)
+fun reasonable_date(date : int * int * int) = 
+let 
+  fun is_leap_year(year : int) = 
+    ((year mod 400 = 0) orelse (year mod 4 = 0)) andalso year mod 100 <> 0
+
+  fun get_nth(xs : int list, n : int) = 
+  if n = 1
+  then hd xs
+  else get_nth(tl xs, n - 1)
+
+  val day = #1 date
+  val month = #2 date
+  val year = #3 date
+  val months_durations_in_days_regular = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  val months_durations_in_days_leap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+in
+  if year < 0
+  then false
+  else if month < 1 orelse month > 12
+  then false
+  else if is_leap_year(year)
+  then day <= get_nth(months_durations_in_days_leap, month)
+  else day <= get_nth(months_durations_in_days_regular, month)
+end
