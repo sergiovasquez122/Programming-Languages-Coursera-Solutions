@@ -90,8 +90,24 @@ fun zip(xs : int list, ys : int list) =
   else (hd xs, hd ys) :: zip(tl xs, tl ys)
   (* 12. Lesser challenge: Write a version zipOpt of zip with return type (int *
   * int) list option. This version should return SOME of a list when the
-  * original lists have teh samelength, and NONE if they do not. *)
+  * original lists have the samelength, and NONE if they do not. *)
 fun zipOpt(xs : int list, ys : int list) = 
   if length xs <> length ys
   then NONE
   else SOME(zip(xs, ys))
+  (* 13. Write a function lookup : (string * int) list * string -> int option
+  * that takes a list of pairs (s, i) and also a string s2 to look up. it then
+    * goes through the list of pairs looking for the string s2 in teh first
+    * component. If it finds a math with corresponding number i, then it returns
+    * SOME i. If it does not, it returns NONE. *)
+fun lookup(xs : (string * int) list, key : string) = 
+  if null xs 
+  then NONE
+  else let val first = #1 (hd xs)
+           val second = #2 (hd xs)
+       in 
+         if first = key
+         then SOME(second)
+         else lookup (tl xs, key)
+       end
+
