@@ -55,6 +55,16 @@ fun greeting(s : string option) =
   if isSome s
   then "Hello there, " ^ valOf s ^ "!"
   else "Hello there, you!"
+ (* 5. Write a function repeat : int list * int list -> int list that given a
+ * list of itnegers and another list of nonnegative integers, repeats the
+ * integers in the first list according to the numbers indicated by the second
+ * list *)
+fun repeat(xs : int list, ys : int list) = 
+  if null ys 
+  then []
+  else if (hd ys) = 0
+  then repeat(tl xs, tl ys)
+  else (hd xs) :: repeat(xs, (hd ys - 1):: (tl ys))
 (* 6. Write a function addOpt : int option * int option -> int option tht given
 * two optional integers, adds them if they are both present or returns NONE if
 * at least one of the two arguments is NONE *)
