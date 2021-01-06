@@ -146,6 +146,24 @@ let
 in
   helper(xs, [], [])
 end
+(* 15. Write  version splitAt : int list * int -> int list * int list of the
+* previous function that takes an extra threshold parameter, and uses that
+* instead of 0 as the separating point for the two resulting lists *)
+fun splitAt(xs : int list, threshold : int) = 
+let 
+    fun reverse(xs : int list, aux : int list) = 
+      if null xs
+      then aux
+      else reverse(tl xs, (hd xs) :: aux)
+  fun helper(xs : int list, neg : int list, pos : int list) =
+        if null xs 
+        then (reverse(neg,[]), reverse(pos, []))
+        else if (hd xs) < threshold 
+        then helper(tl xs, (hd xs) :: neg, pos)
+        else helper(tl xs, neg, (hd xs) :: pos)
+in
+  helper(xs, [], [])
+end
 (* 16. Write a function isSorted : int list -> boolean that given a list of
         * integers determines whether the list is sorted in increasing order. *)
 fun isSorted(xs : int list) = 
