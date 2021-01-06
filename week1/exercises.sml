@@ -48,6 +48,13 @@ let
 in
   helper(xs, 0)
 end
+(* 4. Write a function greeting : string option -> string there given a string
+* option SOME name return the string "Hello there, ...!" where the dots would be
+* replaced by name *)
+fun greeting(s : string option) = 
+  if isSome s
+  then "Hello there, " ^ valOf s ^ "!"
+  else "Hello there, you!"
 (* 6. Write a function addOpt : int option * int option -> int option tht given
 * two optional integers, adds them if they are both present or returns NONE if
 * at least one of the two arguments is NONE *)
