@@ -243,5 +243,20 @@ let
 in
    helper(xs, [], [])
 end
-
-
+(* 21. Write another sorting function not_so_quick_sort : int list -> int list
+* that works as follows : Given the initial list of integers, splits it two
+* lists using divide, then recursively sorts those two lists, then merges them
+* together with sortedMerge *)
+fun not_so_quick_sort(xs : int list) = 
+  if null xs
+  then []
+  else if null (tl xs) 
+  then [hd xs]
+  else 
+    let 
+      val (lhs, rhs) = divide(xs)
+      val lhs_sorted = not_so_quick_sort(lhs)
+      val rhs_sorted = not_so_quick_sort(rhs)
+    in
+      sortedMerge(lhs_sorted, rhs_sorted)
+    end
