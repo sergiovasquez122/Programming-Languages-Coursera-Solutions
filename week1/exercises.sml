@@ -291,3 +291,20 @@ let fun helper(current_n, divisor) =
 in
   helper(n, 2)
 end
+(* 24. Write a function multiply : (int * int) list -> int that given a
+* factorization of a number n as described in the previous problem computes back
+* the number n.*)
+fun multiply(xs : (int * int) list) = 
+  if null xs 
+  then 1
+  else 
+    let fun pow(x : int, y: int) = 
+    if y = 0
+    then 1
+    else x * pow(x, y - 1)
+      
+      val x = #1 (hd xs)
+      val y = #2 (hd xs)
+    in
+      pow(x, y) * multiply(tl xs)
+    end
