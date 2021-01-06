@@ -220,3 +220,28 @@ fun qsort(xs : int list) =
     in
       qsort(lhs) @ [head] @ qsort(rhs)
     end
+(* 20. Write a function divide : int list -> int list * int list that takes a
+* list of integers and produces two lists by alternating elements between the
+* lists. *)
+fun divide(xs : int list) = 
+let 
+    fun reverse(xs : int list, aux : int list) = 
+      if null xs
+      then aux
+      else reverse(tl xs, (hd xs) :: aux)
+  fun helper(xs : int list, lhs : int list, rhs : int list) = 
+      if null xs
+      then (reverse(lhs,[]), reverse(rhs, []))
+      else if null (tl xs)
+      then helper(tl xs, (hd xs)::lhs, rhs)
+      else 
+        let val first = hd xs
+            val second = hd (tl xs)
+        in 
+            helper(tl (tl xs), first :: lhs, second :: rhs)
+        end
+in
+   helper(xs, [], [])
+end
+
+
