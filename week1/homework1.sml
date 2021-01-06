@@ -137,3 +137,43 @@ fun oldest(dates : (int * int * int) list) =
     in
       SOME(dates)
 end
+(* 12.  Write functino number_in_months_challenge and dates_in_months_challenge that
+* are like your solutions to problem 3 and 5 except having a month in the second
+* arguement multiple times has no more effect than having it once. *)
+fun find_elem(xs : int list, x : int) =
+  if null xs
+  then false
+  else x = (hd xs) orelse find_elem(tl xs, x)
+
+fun remove_duplicates(xs : int list) = 
+let fun helper(xs : int list, aux : int list) = 
+if null xs
+then aux
+else 
+  if find_elem(aux, hd xs)
+  then helper(tl xs, aux)
+  else helper(tl xs, (hd xs) :: aux)
+in 
+  helper(xs, [])
+end
+
+fun number_in_months_challenge(dates : (int * int * int) list, months : int
+  list) = 
+  if null months 
+  then 0
+  else 
+    let
+      val months' = remove_duplicates(months)
+    in
+      number_in_month(dates, hd months') + number_in_months(dates, tl months')
+    end
+
+fun dates_in_months_challenge(dates : (int * int * int) list, months : int list)
+  = if null months
+    then []
+    else 
+      let 
+        val months' = remove_duplicates months
+      in
+        dates_in_month(dates, hd months') @ dates_in_months(dates, tl months')
+      end
