@@ -136,3 +136,19 @@ let fun descendingSorted(xs : int list) =
 in
   isSorted xs orelse descendingSorted xs
 end
+(* 18. Write a function sortedMerge : int list * int list -> int list that takes
+* two list of integers that are each sorted from smallest to largest, and merges
+* them into one sorted list.*)
+fun sortedMerge(xs : int list, ys : int list) = 
+if null xs 
+then ys
+else if null ys
+then xs
+else let val xs_head = hd xs
+         val ys_head = hd ys
+     in 
+       if xs_head < ys_head 
+       then xs_head :: sortedMerge(tl xs, ys)
+       else ys_head :: sortedMerge(xs, tl ys)
+     end
+
