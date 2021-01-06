@@ -79,3 +79,18 @@ let
 in
   month ^ " " ^ day ^ ", " ^ year
 end
+(* 8. Write a function number_before_reaching_sum that takes an int called sum
+* and an int list. and returns an int. you should return an int n such that the
+* first n element of the list add to less than sum, but the first n + 1 elements
+* of the list add to sum or more *)
+fun number_before_reaching_sum(sum : int, xs : int list) = 
+let 
+  fun accum(curr_sum : int, xs : int list) = 
+    if (hd xs) + curr_sum >= sum
+    then curr_sum
+    else accum(curr_sum + (hd xs), tl xs)
+in
+    accum(0, xs)
+end
+(*9. Write a function what_month that takes a day of the year and return what
+* month tha day is in. *)
