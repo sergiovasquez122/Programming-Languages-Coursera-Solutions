@@ -127,6 +127,25 @@ fun lookup(xs : (string * int) list, key : string) =
          then SOME(second)
          else lookup (tl xs, key)
        end
+(* 14. Write a function splitup : int list -> int list * int list that given a
+* list of integers creates two list of integers, one containing the non-negative
+* entries, the other containing the negative entries.Relative order must be
+* preserved *)
+fun splitup(xs : int list) = 
+let 
+    fun reverse(xs : int list, aux : int list) = 
+      if null xs
+      then aux
+      else reverse(tl xs, (hd xs) :: aux)
+  fun helper(xs : int list, neg : int list, pos : int list) =
+        if null xs 
+        then (reverse(neg,[]), reverse(pos, []))
+        else if (hd xs) < 0 
+        then helper(tl xs, (hd xs) :: neg, pos)
+        else helper(tl xs, neg, (hd xs) :: pos)
+in
+  helper(xs, [], [])
+end
 (* 16. Write a function isSorted : int list -> boolean that given a list of
         * integers determines whether the list is sorted in increasing order. *)
 fun isSorted(xs : int list) = 
@@ -168,4 +187,3 @@ else let val xs_head = hd xs
        then xs_head :: sortedMerge(tl xs, ys)
        else ys_head :: sortedMerge(xs, tl ys)
      end
-
