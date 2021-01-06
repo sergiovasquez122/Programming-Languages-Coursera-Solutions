@@ -112,12 +112,27 @@ fun lookup(xs : (string * int) list, key : string) =
        end
 (* 16. Write a function isSorted : int list -> boolean that given a list of
         * integers determines whether the list is sorted in increasing order. *)
-fun isSort(xs : int list) = 
+fun isSorted(xs : int list) = 
   if null xs orelse null (tl xs) 
   then true
   else let
        val head = hd xs
        val next_elem = hd (tl xs)
        in 
-         head < next_elem andalso isSort(tl xs)
+         head < next_elem andalso isSorted(tl xs)
        end
+(* 17. Write a function isAnySorted : int list -> boolean that given a list of
+        *integers determines whether the list is sorted in increasing order *)
+fun isAnySorted(xs : int list) = 
+let fun descendingSorted(xs : int list) = 
+    if null xs orelse null (tl xs)
+    then true
+    else 
+      let val first = hd xs
+          val second = hd (tl xs)
+      in 
+        first > second andalso descendingSorted(tl xs)
+      end
+in
+  isSorted xs orelse descendingSorted xs
+end
