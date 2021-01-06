@@ -56,3 +56,17 @@ fun dates_in_month(dates : (int * int * int) list, month : int) =
       then curr_element::dates_in_month(tl dates, month)
       else dates_in_month(tl dates, month)
     end
+(* 5. Write a function dates_in_months that takes a list of dates and a list of
+        * months and returns a list holding the dates from the argument list of
+               * dates that are in any of the months in the list of months *)
+fun dates_in_months(dates : (int * int * int) list, months : int list) = 
+  if null months
+  then []
+  else dates_in_month(dates, hd months) @ dates_in_months(dates, tl months)
+(* 6. Write a function get_nth that takes a list of strings and an int n and
+* returns the nth element of the list where the head of the list is 1st.*)
+fun get_nth(xs : string list, n : int) = 
+  if n = 1
+  then hd xs
+  else get_nth(tl xs, n - 1)
+
