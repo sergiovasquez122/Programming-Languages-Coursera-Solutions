@@ -205,3 +205,18 @@ else let val xs_head = hd xs
        then xs_head :: sortedMerge(tl xs, ys)
        else ys_head :: sortedMerge(xs, tl ys)
      end
+(* 19. Write a sorting function qsort : int list -> int list that works as
+* follows : Takes the first element out, and usess it as the "threshold" for
+* splitAt.it then recursively sorts the two lists produced by splitAt. Finally
+* it brings the two lists together. *)
+fun qsort(xs : int list) = 
+  if null xs 
+  then []
+  else
+    let 
+      val head = hd xs
+      val rest = tl xs
+      val (lhs, rhs) = splitAt(rest, head)
+    in
+      qsort(lhs) @ [head] @ qsort(rhs)
+    end
