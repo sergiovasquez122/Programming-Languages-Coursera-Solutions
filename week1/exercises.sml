@@ -260,3 +260,16 @@ fun not_so_quick_sort(xs : int list) =
     in
       sortedMerge(lhs_sorted, rhs_sorted)
     end
+(* Write a function fullDivide : int * int -> int * int that given two numbers
+* k and n it attempts to evenly divide k into n as many times as possible, and
+* returns a pair (d, n2) where d is the number of times while n2 is the resuling
+* after all tose divisions *)
+fun fullDivide(k : int, n : int) = 
+let 
+  fun helper(n : int ,accum : int) = 
+    if n mod k <> 0
+    then (accum, n)
+    else helper(n div k, accum + 1)
+in
+    helper(n, 0)
+end
