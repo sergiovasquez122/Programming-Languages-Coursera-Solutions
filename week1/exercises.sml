@@ -260,7 +260,7 @@ fun not_so_quick_sort(xs : int list) =
     in
       sortedMerge(lhs_sorted, rhs_sorted)
     end
-(* Write a function fullDivide : int * int -> int * int that given two numbers
+(* 22. Write a function fullDivide : int * int -> int * int that given two numbers
 * k and n it attempts to evenly divide k into n as many times as possible, and
 * returns a pair (d, n2) where d is the number of times while n2 is the resuling
 * after all tose divisions *)
@@ -272,4 +272,22 @@ let
     else helper(n div k, accum + 1)
 in
     helper(n, 0)
+end
+(* 23. Using fullDivide write a function factorize : int -> (int * int) list
+* that given a numer n returns a list of pairs (d, k) where d is a prime number
+* dividing n and k is the numer of times it fits. The pairs should be in *) 
+fun factorize(n : int) = 
+let fun helper(current_n, divisor) = 
+        if divisor > current_n 
+        then []
+        else if current_n mod divisor <> 0
+        then helper(current_n, divisor + 1)
+        else
+          let 
+            val (times_went_in, new_dividend) = fullDivide(divisor, current_n)
+          in
+            (divisor, times_went_in)::helper(new_dividend, divisor + 1)
+          end
+in
+  helper(n, 2)
 end
