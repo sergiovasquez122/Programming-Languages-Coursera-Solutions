@@ -135,7 +135,7 @@ fun oldest(dates : (int * int * int) list) =
             else tl_ans
           end
     in
-      SOME(dates)
+      SOME(helper dates)
 end
 (* 12.  Write functino number_in_months_challenge and dates_in_months_challenge that
 * are like your solutions to problem 3 and 5 except having a month in the second
