@@ -284,8 +284,23 @@ fun all_products(xs) =
            sorted
          end
 (* Writing hw 1 using pattern matching *)
-fun is_older(date_1, date_2) = 
-  true
+fun is_older(xs : (int * int * int), ys : (int * int * int)) = 
+let 
+  val day_left = #1 xs
+  val month_left = #2 xs
+  val year_left = #3 xs
+  val day_right = #1 ys
+  val month_right = #2 ys
+  val year_right = #3 ys
+in
+  if year_left > year_right then false
+  else if year_left < year_right then true
+  else if month_left > month_right then false
+  else if month_left < month_right then true
+  else if day_left > day_right then false
+  else if day_left < day_right then true
+  else false
+end
 
 fun number_in_month(xs, x) = 
   case xs of 
@@ -370,4 +385,18 @@ let fun non_empty(dates) =
       case dates of
            [] => NONE
          | l => SOME (non_empty(l))
+end
+
+fun number_in_months_challenge(dates, months) = 
+let 
+  val remove_dups = remove_duplicates(months)
+in 
+  number_in_months(dates, remove_dups)
+end
+
+fun dates_in_months_challenge(dates, months) = 
+let 
+  val remove_dups = remove_duplicates(months)
+in
+  dates_in_months(dates, remove_dups)
 end

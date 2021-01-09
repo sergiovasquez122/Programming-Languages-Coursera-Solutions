@@ -10,7 +10,10 @@ cmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^
 cumsum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun cumsum(xs) = $/;"	f	language:SML
 dates_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_month(dates, month) = $/;"	f	language:SML
 dates_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_months(dates, months) = $/;"	f	language:SML
+dates_in_months_challenge	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_months_challenge(dates, months) = $/;"	f	language:SML
 date_to_string	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun date_to_string(day, month, year) = $/;"	f	language:SML
+day_left	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val day_left = #1 xs$/;"	v	language:SML
+day_right	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val day_right = #1 ys$/;"	v	language:SML
 DifferentLengths	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^exception DifferentLengths$/;"	e	language:SML
 divide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun divide(xs) = $/;"	f	language:SML
 equal	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | ((s', i))::xs' => (let val equal = s' = s$/;"	v	language:SML
@@ -33,7 +36,7 @@ helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml
 isAnySorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isAnySorted(xs) = $/;"	f	language:SML
 isSorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSorted(xs) = $/;"	f	language:SML
 isSortedCmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSortedCmp(xs, cmp) = $/;"	f	language:SML
-is_older	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun is_older(date_1, date_2) = $/;"	f	language:SML
+is_older	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun is_older(xs : (int * int * int), ys : (int * int * int)) = $/;"	f	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                     val (lhs, rhs) = splitAt(xs', x)$/;"	v	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val (lhs, rhs) = divide(xs')$/;"	v	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val (lhs, rhs) = divide(l)$/;"	v	language:SML
@@ -45,7 +48,9 @@ max	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^
 min	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun min(xs) = $/;"	f	language:SML
 months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  let val months = ["January", "February","March", "April", "May", "June", "July","August", "September", "October", "November", "December"]$/;"	v	language:SML
 months_durations_in_days	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    val months_durations_in_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,$/;"	v	language:SML
+month_left	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val month_left = #2 xs$/;"	v	language:SML
 month_range	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun month_range(day1, day2) = $/;"	f	language:SML
+month_right	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val month_right = #2 ys$/;"	v	language:SML
 month_str	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    val month_str = get_nth(months, month)$/;"	v	language:SML
 multiply	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun multiply(xs) = $/;"	f	language:SML
 non_empty	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun non_empty(dates) = $/;"	f	language:SML
@@ -53,9 +58,12 @@ not_so_quick_sort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/ex
 number_before_reaching_sum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_before_reaching_sum(sum, xs) = $/;"	f	language:SML
 number_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_month(xs, x) = $/;"	f	language:SML
 number_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_months(dates, months) = $/;"	f	language:SML
+number_in_months_challenge	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_months_challenge(dates, months) = $/;"	f	language:SML
 oldest	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun oldest(dates) = $/;"	f	language:SML
 qsort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun qsort(xs) = $/;"	f	language:SML
 remove_duplicates	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun remove_duplicates(xs) = $/;"	f	language:SML
+remove_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val remove_dups = remove_duplicates(months)$/;"	v	language:SML
+remove_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val remove_dups = remove_duplicates(months)$/;"	v	language:SML
 repeat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun repeat(xs, ys) = $/;"	f	language:SML
 reverse	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    fun reverse(xs, acc) = $/;"	f	language:SML
 rhs_sorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val rhs_sorted = not_so_quick_sort(rhs)$/;"	v	language:SML
@@ -72,6 +80,8 @@ unrolled	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.s
 unroll_helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun unroll_helper(xs) = $/;"	f	language:SML
 what_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun what_month(day) = $/;"	f	language:SML
 with_hd	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | x::xs' => let val with_hd = curr * x$/;"	v	language:SML
+year_left	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val year_left = #3 xs$/;"	v	language:SML
+year_right	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val year_right = #3 ys$/;"	v	language:SML
 zip	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun zip(xs, ys) = $/;"	f	language:SML
 zipHelper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun zipHelper(xs', ys', xs_shorter_than_ys) = $/;"	f	language:SML
 zipOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun zipOpt(xs, ys) = $/;"	f	language:SML
