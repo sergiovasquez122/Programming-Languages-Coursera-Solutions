@@ -419,4 +419,23 @@ fun reasonable_date(day, month, year) =
     then 1 <= day andalso day <= get_nth(months_durations_in_days_leap, month)
     else 1 <= day andalso day <= get_nth(months_durations_in_days_regular, month)
   end
+(* Problems 1-4 use these type definitions *)
+type student_id = int
+type grade = int
+type final_grade = {id : student_id, grade : grade option}
+datatype pass_fail = pass | fail
 
+(*1. Write a function pass_or_fail of type {grade : int option, id : 'a} ->
+* pass_fial that takes a final grade and return pass if the grade field contains
+* SOME i for an i >= 75 *)
+fun pass_or_fail({grade = g, id = x}) =
+  case g of 
+       NONE => fail
+     | SOME i => if i >= 75 then pass else fail
+(*2 Using pass_or_fail as a helper function, write a function has passed_of type
+* {grade : int option, id : 'a} -> bool that returns true if and only if the
+* grade field contins SOME if or an i >= 75 *)
+fun has_passed(g) = 
+  case pass_or_fail g of
+       fail => false
+     | pass => true
