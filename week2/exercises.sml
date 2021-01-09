@@ -284,6 +284,9 @@ fun all_products(xs) =
            sorted
          end
 (* Writing hw 1 using pattern matching *)
+fun is_older(date_1, date_2) = 
+  true
+
 fun number_in_month(xs, x) = 
   case xs of 
        [] => 0
@@ -334,4 +337,37 @@ let
                      else nth
 in
   helper(0, 0, xs)
+end
+
+fun what_month(day) = 
+let 
+    val months_durations_in_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30,
+           31]
+             in 
+                  number_before_reaching_sum(day, months_durations_in_days) + 1
+end
+
+fun month_range(day1, day2) = 
+let 
+  fun helper(from, to) = 
+  case from = to of 
+     true => to::[]
+   | _ => from::helper(from + 1, to)
+in 
+  case day1 > day2 of
+       true => []
+     | _ => helper(what_month(day1), what_month(day2))
+end
+
+fun oldest(dates) = 
+let fun non_empty(dates) = 
+    case dates of
+         x::[] => x
+       | x::y::l => if is_older(x, y) 
+                    then non_empty(x::l)
+                    else non_empty(y::l)
+    in
+      case dates of
+           [] => NONE
+         | l => SOME (non_empty(l))
 end
