@@ -8,6 +8,9 @@ any	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^
 BadList	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^exception BadList$/;"	e	language:SML
 cmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun cmp(x, y) = x >= y$/;"	f	language:SML
 cumsum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun cumsum(xs) = $/;"	f	language:SML
+dates_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_month(dates, month) = $/;"	f	language:SML
+dates_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_months(dates, months) = $/;"	f	language:SML
+date_to_string	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun date_to_string(day, month, year) = $/;"	f	language:SML
 DifferentLengths	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^exception DifferentLengths$/;"	e	language:SML
 divide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun divide(xs) = $/;"	f	language:SML
 equal	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | ((s', i))::xs' => (let val equal = s' = s$/;"	v	language:SML
@@ -18,9 +21,11 @@ factors_no_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exer
 find_elem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun find_elem(xs, x) =$/;"	f	language:SML
 fullDivide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun fullDivide(k, n) = $/;"	f	language:SML
 generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun generate_factors(xs, curr) = $/;"	f	language:SML
+get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun get_nth(str, n) = $/;"	f	language:SML
 greeting	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun greeting(s) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    fun helper(n, acc) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    fun helper(xs, curr, acc) = $/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  fun helper(curr_sum, nth, xs) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  fun helper(xs, acc) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun helper(current_n, divisor) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun helper(xs, aux) =$/;"	f	language:SML
@@ -36,9 +41,13 @@ list_without	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercis
 lookup	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun lookup(xs, s) =$/;"	f	language:SML
 max	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun max(xs) = $/;"	f	language:SML
 min	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun min(xs) = $/;"	f	language:SML
+months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  let val months = ["January", "February","March", "April", "May", "June", "July","August", "September", "October", "November", "December"]$/;"	v	language:SML
+month_str	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    val month_str = get_nth(months, month)$/;"	v	language:SML
 multiply	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun multiply(xs) = $/;"	f	language:SML
 not_so_quick_sort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun not_so_quick_sort(xs) = $/;"	f	language:SML
+number_before_reaching_sum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_before_reaching_sum(sum, xs) = $/;"	f	language:SML
 number_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_month(xs, x) = $/;"	f	language:SML
+number_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_months(dates, months) = $/;"	f	language:SML
 qsort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun qsort(xs) = $/;"	f	language:SML
 remove_duplicates	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun remove_duplicates(xs) = $/;"	f	language:SML
 repeat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun repeat(xs, ys) = $/;"	f	language:SML

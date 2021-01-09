@@ -287,6 +287,51 @@ fun all_products(xs) =
 fun number_in_month(xs, x) = 
   case xs of 
        [] => 0
-     | x'::xs' => (case x' = x of
+     | (day, month, year)::xs' => (case month = x of
                        true => 1 + number_in_month(xs', x)
                       | _ => number_in_month(xs', x))
+
+fun number_in_months(dates, months) = 
+  case months of 
+       [] => 0
+     | m::months' => number_in_month(dates, m) + number_in_months(dates, months')
+
+fun dates_in_month(dates, month) = 
+  case dates of
+       [] => []
+     | (day', month', year')::dates' => (case month' = month
+                                         of 
+                                         true => (day', month',
+                                         year')::dates_in_month(dates, month')
+                                            | _ => dates_in_month(dates, month')
+                                         )
+
+fun dates_in_months(dates, months) = 
+  case months of 
+       [] => []
+     | m::months' => dates_in_month(dates, m) @ dates_in_months(dates, months')
+
+fun get_nth(str, n) = 
+  case (n, str) of
+       (_, []) => raise List.Empty
+     | (1, s::str') => s
+     | (n, s::str') => get_nth(str', n - 1)
+
+fun date_to_string(day, month, year) = 
+  let val months = ["January", "February","March", "April", "May", "June", "July","August", "September", "October", "November", "December"]
+    val month_str = get_nth(months, month)
+  in 
+    month_str ^ " " ^ Int.toString(day) ^ ", " ^ Int.toString(year)
+  end
+
+fun number_before_reaching_sum(sum, xs) = 
+let 
+  fun helper(curr_sum, nth, xs) = 
+      case xs of
+           [] => raise List.Empty
+         | x::xs' => if x + curr_sum < sum
+                     then helper(x + curr_sum, nth + 1, xs')
+                     else nth
+in
+  helper(0, 0, xs)
+end
