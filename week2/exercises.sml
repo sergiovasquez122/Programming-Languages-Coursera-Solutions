@@ -283,3 +283,10 @@ fun all_products(xs) =
          in 
            sorted
          end
+(* Writing hw 1 using pattern matching *)
+fun number_in_month(xs, x) = 
+  case xs of 
+       [] => 0
+     | x'::xs' => (case x' = x of
+                       true => 1 + number_in_month(xs', x)
+                      | _ => number_in_month(xs', x))

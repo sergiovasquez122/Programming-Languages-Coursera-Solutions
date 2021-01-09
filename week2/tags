@@ -38,6 +38,7 @@ max	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^
 min	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun min(xs) = $/;"	f	language:SML
 multiply	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun multiply(xs) = $/;"	f	language:SML
 not_so_quick_sort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun not_so_quick_sort(xs) = $/;"	f	language:SML
+number_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_month(xs, x) = $/;"	f	language:SML
 qsort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun qsort(xs) = $/;"	f	language:SML
 remove_duplicates	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun remove_duplicates(xs) = $/;"	f	language:SML
 repeat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun repeat(xs, ys) = $/;"	f	language:SML
