@@ -400,3 +400,23 @@ let
 in
   dates_in_months(dates, remove_dups)
 end
+
+fun reasonable_date(day, month, year) = 
+  let fun is_leap_year(year) = 
+  ((year mod 400 = 0) orelse (year mod 4 = 0)) andalso year mod 100 <> 0
+
+    val months_durations_in_days_regular = [31, 28, 31, 30, 31, 30, 31, 31, 30,
+           31, 30, 31]
+             val months_durations_in_days_leap = [31, 29, 31, 30, 31, 30, 31,
+             31, 30, 31, 30, 31]
+
+  in 
+    if year < 0 
+    then false
+    else if month < 1 orelse month > 12
+    then false
+    else if is_leap_year(year)
+    then 1 <= day andalso day <= get_nth(months_durations_in_days_leap, month)
+    else 1 <= day andalso day <= get_nth(months_durations_in_days_regular, month)
+  end
+
