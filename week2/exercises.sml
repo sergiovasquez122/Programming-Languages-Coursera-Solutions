@@ -58,6 +58,19 @@ fun addOpt(x, y) =
        (SOME x', SOME y') => SOME(x' + y')
      | (_, _) => NONE 
 
+fun addAllOpt(xs) = 
+let 
+  fun helper(xs, acc) = 
+    case xs of 
+         [] => acc
+       | x::xs => case (x, acc) of
+                       (NONE, acc)=> helper(xs, acc)
+                     | (SOME x, SOME acc) => helper(xs, SOME (x + acc))
+                     | (SOME x, NONE) => helper(xs, SOME x)
+in
+  helper(xs, NONE)
+end
+
 fun any(xs) = 
   case xs of
        [] => false 
