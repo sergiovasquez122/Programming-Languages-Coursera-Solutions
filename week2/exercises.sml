@@ -231,3 +231,55 @@ fun multiply(xs) =
        [] => 1
      | (x, 1)::xs' => x * multiply(xs')
      | (x, y)::xs' => x * multiply((x, y - 1)::xs')
+
+fun find_elem(xs, x) =
+  case xs of
+       [] => false
+     | x'::xs' => x' = x orelse find_elem(xs', x)
+
+fun remove_duplicates(xs) = 
+let fun helper(xs, aux) =
+  case xs of
+       [] => aux
+     | x::xs' => (case find_elem(aux, x) of 
+                         false => helper(xs', x::aux)
+                       | _ => helper(xs', aux)
+     )
+in
+  helper(xs, [])
+end
+
+fun generate_factors(xs, curr) = 
+  case xs of
+       [] => [curr]
+     | x::xs' => let val with_hd = curr * x
+                val list_with = generate_factors(xs', with_hd)
+       val list_without = generate_factors(xs', curr)
+                 in
+                   list_without @ list_with
+                 end
+
+fun unroll_helper(xs) = 
+  case xs of 
+       [] => []
+     | ((x, y)::xs) => case y of
+                            0 => []
+                          | _ => x::unroll_helper((x, y - 1)::xs)
+
+fun unroll(xs) = 
+  case xs of
+       [] => []
+     | x::xs' => unroll_helper(xs) @ unroll(xs')
+
+fun all_products(xs) = 
+  case xs of
+       [] => []
+     | x::xs => 
+         let 
+           val unrolled = unroll(x::xs)
+           val factors = generate_factors(unrolled, 1)
+           val factors_no_dups = remove_duplicates(factors)
+           val sorted = qsort(factors_no_dups)
+         in 
+           sorted
+         end

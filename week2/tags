@@ -1,6 +1,8 @@
 !_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+addAllOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addAllOpt(xs) = $/;"	f	language:SML
 addOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addOpt(x, y) = $/;"	f	language:SML
 all	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all(xs) = $/;"	f	language:SML
+all_products	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all_products(xs) = $/;"	f	language:SML
 alternate	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun alternate(xs) = $/;"	f	language:SML
 any	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun any(xs) = $/;"	f	language:SML
 BadList	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^exception BadList$/;"	e	language:SML
@@ -10,10 +12,18 @@ DifferentLengths	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exe
 divide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun divide(xs) = $/;"	f	language:SML
 equal	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | ((s', i))::xs' => (let val equal = s' = s$/;"	v	language:SML
 equal_length	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val equal_length = length xs = length ys$/;"	v	language:SML
+factorize	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun factorize(n) = $/;"	f	language:SML
+factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val factors = generate_factors(unrolled, 1)$/;"	v	language:SML
+factors_no_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val factors_no_dups = remove_duplicates(factors)$/;"	v	language:SML
+find_elem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun find_elem(xs, x) =$/;"	f	language:SML
 fullDivide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun fullDivide(k, n) = $/;"	f	language:SML
+generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun generate_factors(xs, curr) = $/;"	f	language:SML
 greeting	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun greeting(s) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    fun helper(n, acc) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    fun helper(xs, curr, acc) = $/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  fun helper(xs, acc) = $/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun helper(current_n, divisor) = $/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun helper(xs, aux) =$/;"	f	language:SML
 isAnySorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isAnySorted(xs) = $/;"	f	language:SML
 isSorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSorted(xs) = $/;"	f	language:SML
 isSortedCmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSortedCmp(xs, cmp) = $/;"	f	language:SML
@@ -21,21 +31,30 @@ lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val (lhs, rhs) = divide(xs')$/;"	v	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val (lhs, rhs) = divide(l)$/;"	v	language:SML
 lhs_sorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val lhs_sorted = not_so_quick_sort(lhs)$/;"	v	language:SML
+list_with	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                val list_with = generate_factors(xs', with_hd)$/;"	v	language:SML
+list_without	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^       val list_without = generate_factors(xs', curr)$/;"	v	language:SML
 lookup	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun lookup(xs, s) =$/;"	f	language:SML
 max	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun max(xs) = $/;"	f	language:SML
 min	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun min(xs) = $/;"	f	language:SML
 multiply	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun multiply(xs) = $/;"	f	language:SML
 not_so_quick_sort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun not_so_quick_sort(xs) = $/;"	f	language:SML
 qsort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun qsort(xs) = $/;"	f	language:SML
+remove_duplicates	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun remove_duplicates(xs) = $/;"	f	language:SML
 repeat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun repeat(xs, ys) = $/;"	f	language:SML
 reverse	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    fun reverse(xs, acc) = $/;"	f	language:SML
 rhs_sorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val rhs_sorted = not_so_quick_sort(rhs)$/;"	v	language:SML
+sorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val sorted = qsort(factors_no_dups)$/;"	v	language:SML
 sortedMerge	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sortedMerge(xs, ys) = $/;"	f	language:SML
 split1	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | x'::xs' => let val (split1, split2) = splitAt(xs',x)$/;"	v	language:SML
 split1	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | x'::xs' => let val (split1, split2) = splitup(xs',x)$/;"	v	language:SML
 splitAt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun splitAt(xs, x) = $/;"	f	language:SML
 splitup	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun splitup(xs, x) =$/;"	f	language:SML
+times_went_in	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                  let val (times_went_in, new_dividend) = fullDivide(divisor,$/;"	v	language:SML
 tl_ans	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val tl_ans = max(xs')$/;"	v	language:SML
+unroll	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun unroll(xs) = $/;"	f	language:SML
+unrolled	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val unrolled = unroll(x::xs)$/;"	v	language:SML
+unroll_helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun unroll_helper(xs) = $/;"	f	language:SML
+with_hd	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | x::xs' => let val with_hd = curr * x$/;"	v	language:SML
 zip	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun zip(xs, ys) = $/;"	f	language:SML
 zipHelper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun zipHelper(xs', ys', xs_shorter_than_ys) = $/;"	f	language:SML
 zipOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun zipOpt(xs, ys) = $/;"	f	language:SML
