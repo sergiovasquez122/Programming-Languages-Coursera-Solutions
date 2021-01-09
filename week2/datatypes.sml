@@ -41,5 +41,3 @@ fun append(xs, ys) =
   case xs of
        [] => ys
      | x::xs' => x::append(xs', ys)
-
-datatype 'a option = NONE | SOME of 'a
