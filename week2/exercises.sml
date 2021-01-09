@@ -210,6 +210,22 @@ fun fullDivide(k, n) =
     helper(n, 0)
   end
 
+fun factorize(n) = 
+let fun helper(current_n, divisor) = 
+case divisor > current_n of
+     true => []
+   | _ => (case current_n mod divisor <> 0 of 
+                true => helper(current_n, divisor + 1)
+              | _ => 
+                  let val (times_went_in, new_dividend) = fullDivide(divisor,
+                  current_n)
+                  in
+                    (divisor, times_went_in)::helper(new_dividend, divisor + 1)
+                  end)
+in 
+  helper(n, 2)
+end
+
 fun multiply(xs) = 
   case xs of
        [] => 1
