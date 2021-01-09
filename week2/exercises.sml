@@ -24,6 +24,20 @@ fun min(xs) =
      | x::y::xs' => case x < y of
                          true => min(x::xs')
                        | false => min(y::xs')
+fun cumsum(xs) = 
+  let 
+    fun reverse(xs, acc) = 
+      case xs of
+           [] => acc
+         | x::xs' => reverse(xs', x::acc)
+
+    fun helper(xs, curr, acc) = 
+      case xs of
+           [] => acc
+         | x::xs' => helper(xs', curr + x, (curr+x)::acc)
+  in
+    reverse (helper(xs, 0, []), [])
+  end
 
 fun greeting(s) = 
   case s of
@@ -61,6 +75,19 @@ fun zip(xs, ys) =
        ([], []) => []
      | (x::xs', y::ys') => (x, y)::zip(xs', ys')
      | _ => raise DifferentLengths
+
+fun ziprecycle(xs, ys) = 
+let fun zipHelper(xs', ys', xs_shorter_than_ys) = 
+  case (xs', ys', xs_shorter_than_ys) of  
+       ([], [], _) => []
+     | (x::xs', [], true) => []
+     | ([], y::ys', true) => zipHelper(xs, y::ys', true)
+     | (x::xs', [], false) => zipHelper(x::xs', ys, false)
+     | ([], y::ys', false) => []
+     | (x::xs', y::ys', e) => (x, y)::zipHelper(xs', ys', e)
+in
+  zipHelper(xs, ys, length xs < length ys)
+end
 
 fun zipOpt(xs, ys) = 
 let 
@@ -159,6 +186,16 @@ fun not_so_quick_sort(xs) =
          in
            sortedMerge(lhs_sorted, rhs_sorted)
          end
+
+fun fullDivide(k, n) = 
+  let 
+    fun helper(n, acc) = 
+      case (n mod k) of 
+           0 => helper(n div k, acc + 1)
+         | _ => (acc, n)
+  in 
+    helper(n, 0)
+  end
 
 fun multiply(xs) = 
   case xs of
