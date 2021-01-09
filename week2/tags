@@ -65,6 +65,8 @@ number_before_reaching_sum	/home/sergio/Programming-Languages-Coursera-Solutions
 number_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_month(xs, x) = $/;"	f	language:SML
 number_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_months(dates, months) = $/;"	f	language:SML
 number_in_months_challenge	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_months_challenge(dates, months) = $/;"	f	language:SML
+number_of_misgraded	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_of_misgraded(xs) =$/;"	f	language:SML
+number_passed	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_passed(xs) = $/;"	f	language:SML
 oldest	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun oldest(dates) = $/;"	f	language:SML
 pass_fail	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype pass_fail = pass | fail$/;"	t	language:SML
 pass_or_fail	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun pass_or_fail({grade = g, id = x}) =$/;"	f	language:SML

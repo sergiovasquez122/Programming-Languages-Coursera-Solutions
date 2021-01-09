@@ -439,3 +439,24 @@ fun has_passed(g) =
   case pass_or_fail g of
        fail => false
      | pass => true
+(* 3. Using has_passed as a helper function, write a function numbeer_psses that
+* takes  list of type finl-grade nd returns how mny list elements hve passing
+* grades *)
+fun number_passed(xs) = 
+  case xs of
+       [] => 0
+     | x::xs' => if has_passed x
+                 then 1 + number_passed xs'
+                 else number_passed xs'
+(* 4. Write a function number_misgraded of type (pass_fail * final_grade) list
+* -> int tht indicates how many list elements are mislabeled where mislabeling
+* means a pair (pass, x) where has_passed x is false or (fial, x where
+* has_passed x is true *)
+fun number_of_misgraded(xs) =
+  case xs of 
+       [] => 0
+     | (status, x)::xs' => (case (status, has_passed x) of 
+                                 (fail, false) => number_of_misgraded(xs')
+                               | (pass, true) => number_of_misgraded(xs')
+                               | _ => 1 + number_of_misgraded(xs')
+                               )
