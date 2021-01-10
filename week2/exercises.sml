@@ -476,6 +476,47 @@ fun sum_tree root =
   case root of 
        leaf => 0
      | node {value = x, left = l, right = r} => x + sum_tree l + sum_tree r
+(* 8. Re-implement various functions provided in the SML standard library *)
+fun null' xs = 
+  case xs of
+       [] => true
+     | _ => false
+
+fun length' xs = 
+  case xs of
+       [] => 0
+     | _::xs' => 1 + length' xs'
+
+fun append(xs, ys) = 
+  case xs of 
+       [] => ys
+     | x::xs' => x :: append(xs', ys)
+
+fun hd'(xs) = 
+  case xs of
+       [] => raise List.Empty
+     | (x::_) => x
+
+fun tl'(xs) = 
+  case xs of
+       [] => raise List.Empty
+     | _::xs' => xs'
+
+fun last'(xs) = 
+  case xs of
+       [] => raise List.Empty
+     | x::[] => x
+     | x::xs' => last' xs'
+
+fun rev' l = 
+let 
+  fun helper(l, acc) = 
+    case l of 
+         [] => acc
+       | x::l' => helper(l', x::acc)
+in
+  helper(l, [])
+end
 
 (* Problems 9-16 use this type definition for natural numbers *)
 datatype nat = ZERO | SUCC of nat
@@ -533,3 +574,10 @@ fun less_than(x, y) =
       |(ZERO, SUCC m) => true
       |(SUCC m, ZERO) => true
       |(SUCC m, SUCC n) => less_than(m, n)
+
+datatype intSet = 
+  Elems of int list (*list of integers, possibly with duplicates to be ignored*)
+                | Range of { from : int, to : int }  (* integers from one number
+                to another *)
+                | Union of intSet * intSet (* union of the two sets *)
+                | Intersection of intSet * intSet (* intersection of the two sets *)
