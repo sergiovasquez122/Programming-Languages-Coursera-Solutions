@@ -10,6 +10,7 @@ any	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^
 append'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun append'(xs, ys) = $/;"	f	language:SML
 BadList	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^exception BadList$/;"	e	language:SML
 cmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun cmp(x, y) = x >= y$/;"	f	language:SML
+concat'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun concat' l = $/;"	f	language:SML
 cumsum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun cumsum(xs) = $/;"	f	language:SML
 dates_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_month(dates, month) = $/;"	f	language:SML
 dates_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_months(dates, months) = $/;"	f	language:SML
@@ -19,6 +20,7 @@ day_left	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.s
 day_right	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val day_right = #1 ys$/;"	v	language:SML
 DifferentLengths	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^exception DifferentLengths$/;"	e	language:SML
 divide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun divide(xs) = $/;"	f	language:SML
+drop'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun drop'(l, i) = $/;"	f	language:SML
 equal	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | ((s', i))::xs' => (let val equal = s' = s$/;"	v	language:SML
 equal_length	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val equal_length = length xs = length ys$/;"	v	language:SML
 factorize	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun factorize(n) = $/;"	f	language:SML
@@ -29,6 +31,7 @@ find_elem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.
 flag	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype flag = leave_me_alone | prune_me$/;"	t	language:SML
 fullDivide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun fullDivide(k, n) = $/;"	f	language:SML
 generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun generate_factors(xs, curr) = $/;"	f	language:SML
+getItem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getItem l = $/;"	f	language:SML
 get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun get_nth(str, n) = $/;"	f	language:SML
 grade	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type grade = int$/;"	t	language:SML
 greeting	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun greeting(s) = $/;"	f	language:SML
@@ -109,6 +112,7 @@ splitup	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sm
 student_id	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type student_id = int$/;"	t	language:SML
 sub	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sub(x, y) = $/;"	f	language:SML
 sum_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sum_tree root =$/;"	f	language:SML
+take'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun take'(l, i) = $/;"	f	language:SML
 times_went_in	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                  let val (times_went_in, new_dividend) = fullDivide(divisor,$/;"	v	language:SML
 tl'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun tl'(xs) = $/;"	f	language:SML
 tl_ans	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val tl_ans = max(xs')$/;"	v	language:SML

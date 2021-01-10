@@ -508,6 +508,11 @@ fun last'(xs) =
      | x::[] => x
      | x::xs' => last' xs'
 
+fun getItem l = 
+  case l of
+       [] => NONE
+     | x::xs' => SOME (x, xs')
+
 fun nth(l, i) = 
   case (i < 0, i = 0) of
        (true, _) => raise Subscript
@@ -543,6 +548,12 @@ let
 in
   helper(l, [])
 end
+
+fun concat' l = 
+  case l of
+       [] => []
+     | l::[] => l
+     | x::y::l' => append'(x, y) @ concat'(l')
 (* Problems 9-16 use this type definition for natural numbers *)
 datatype nat = ZERO | SUCC of nat
 
