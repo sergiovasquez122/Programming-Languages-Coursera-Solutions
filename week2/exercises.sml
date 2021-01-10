@@ -508,6 +508,25 @@ in
   helper(n, ZERO)
 end
 
+fun add(x, y) = 
+  case x of
+       ZERO => y
+     | SUCC m => add(m, SUCC y)
+
+fun sub(x, y) = 
+  case y of 
+       ZERO => x
+     | SUCC y => sub(pred x, y)
+
+fun mult(x, y) = 
+let fun helper(acc, y) =
+case y of
+     ZERO => acc
+   | SUCC y => helper(add(acc, x), y)
+in 
+  helper(ZERO, y)
+end
+
 fun less_than(x, y) = 
   case (x, y) of
        (ZERO, ZERO) => false
