@@ -554,6 +554,39 @@ fun concat' l =
        [] => []
      | l::[] => l
      | x::y::l' => append'(x, y) @ concat'(l')
+
+fun revAppend'(l1, l2) = 
+  (rev' l1) @ l2
+
+fun map' (f,xs) = 
+  case xs of
+       [] => []
+     | x::xs' => (f x) :: map'(f, xs')
+
+fun find'(f, xs) = 
+  case xs of
+       [] => NONE
+     | x::xs' => case f x of
+                      true => SOME x
+                    | false => find'(f, xs')
+
+fun filter'(f, xs) = 
+  case xs of
+       [] => []
+     | x::xs' => case f x of
+                     true => x :: filter'(f, xs')
+                     | false => filter'(f, xs')
+
+fun partition'(f, xs) = 
+  case xs of
+       [] => ([], [])
+     | x::xs' => (let 
+                    val (lhs, rhs) = partition'(f, xs')
+                 in 
+                   case f(x) of
+                        true => (x::lhs, rhs)
+                      | false => (lhs, x::rhs)
+                 end )
 (* Problems 9-16 use this type definition for natural numbers *)
 datatype nat = ZERO | SUCC of nat
 
