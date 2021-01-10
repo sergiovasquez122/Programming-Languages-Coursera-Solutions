@@ -599,6 +599,26 @@ let
 in 
   not (exists'(g, xs))
 end
+
+fun getOpt'(opt, a) = 
+  case opt of
+       SOME v => SOME v
+     | _ => a 
+
+fun isSome' opt = 
+  case opt of
+       SOME v => true
+     | _ => false
+
+fun valOf' opt =
+  case opt of
+       SOME v => v
+     | _ => raise Option
+
+fun filter' f a = 
+  case f a of
+       true => SOME a
+     | _ => NONE
 (* Problems 9-16 use this type definition for natural numbers *)
 datatype nat = ZERO | SUCC of nat
 

@@ -28,6 +28,7 @@ exists'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sm
 factorize	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun factorize(n) = $/;"	f	language:SML
 factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val factors = generate_factors(unrolled, 1)$/;"	v	language:SML
 factors_no_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val factors_no_dups = remove_duplicates(factors)$/;"	v	language:SML
+filter'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun filter' f a = $/;"	f	language:SML
 filter'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun filter'(f, xs) = $/;"	f	language:SML
 final_grade	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type final_grade = {id : student_id, grade : grade option}$/;"	t	language:SML
 find'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun find'(f, xs) = $/;"	f	language:SML
@@ -37,6 +38,7 @@ fullDivide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises
 g	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  fun g x = not (f x)$/;"	f	language:SML
 generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun generate_factors(xs, curr) = $/;"	f	language:SML
 getItem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getItem l = $/;"	f	language:SML
+getOpt'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getOpt'(opt, a) = $/;"	f	language:SML
 get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun get_nth(str, n) = $/;"	f	language:SML
 grade	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type grade = int$/;"	t	language:SML
 greeting	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun greeting(s) = $/;"	f	language:SML
@@ -55,6 +57,7 @@ helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml
 intSet	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype intSet = $/;"	t	language:SML
 int_to_nat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun int_to_nat n = $/;"	f	language:SML
 isAnySorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isAnySorted(xs) = $/;"	f	language:SML
+isSome'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSome' opt = $/;"	f	language:SML
 isSorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSorted(xs) = $/;"	f	language:SML
 isSortedCmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSortedCmp(xs, cmp) = $/;"	f	language:SML
 is_leap_year	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  let fun is_leap_year(year) = $/;"	f	language:SML
@@ -129,6 +132,7 @@ tree_height	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercise
 unroll	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun unroll(xs) = $/;"	f	language:SML
 unrolled	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val unrolled = unroll(x::xs)$/;"	v	language:SML
 unroll_helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun unroll_helper(xs) = $/;"	f	language:SML
+valOf'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun valOf' opt =$/;"	f	language:SML
 what_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun what_month(day) = $/;"	f	language:SML
 with_hd	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | x::xs' => let val with_hd = curr * x$/;"	v	language:SML
 year_left	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val year_left = #3 xs$/;"	v	language:SML
