@@ -1,4 +1,5 @@
 !_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+'a	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype 'a tree = leaf | node of {value : 'a, left : 'a tree, right : 'a tree}$/;"	t	language:SML
 addAllOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addAllOpt(xs) = $/;"	f	language:SML
 addOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addOpt(x, y) = $/;"	f	language:SML
 all	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all(xs) = $/;"	f	language:SML
@@ -23,6 +24,7 @@ factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sm
 factors_no_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val factors_no_dups = remove_duplicates(factors)$/;"	v	language:SML
 final_grade	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type final_grade = {id : student_id, grade : grade option}$/;"	t	language:SML
 find_elem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun find_elem(xs, x) =$/;"	f	language:SML
+flag	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype flag = leave_me_alone | prune_me$/;"	t	language:SML
 fullDivide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun fullDivide(k, n) = $/;"	f	language:SML
 generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun generate_factors(xs, curr) = $/;"	f	language:SML
 get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun get_nth(str, n) = $/;"	f	language:SML
@@ -41,6 +43,7 @@ isSorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.s
 isSortedCmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun isSortedCmp(xs, cmp) = $/;"	f	language:SML
 is_leap_year	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  let fun is_leap_year(year) = $/;"	f	language:SML
 is_older	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun is_older(xs : (int * int * int), ys : (int * int * int)) = $/;"	f	language:SML
+is_positive	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun is_positive n =$/;"	f	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                     val (lhs, rhs) = splitAt(xs', x)$/;"	v	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val (lhs, rhs) = divide(xs')$/;"	v	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val (lhs, rhs) = divide(l)$/;"	v	language:SML
@@ -59,6 +62,7 @@ month_range	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercise
 month_right	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val month_right = #2 ys$/;"	v	language:SML
 month_str	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    val month_str = get_nth(months, month)$/;"	v	language:SML
 multiply	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun multiply(xs) = $/;"	f	language:SML
+nat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype nat = ZERO | SUCC of nat$/;"	t	language:SML
 non_empty	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun non_empty(dates) = $/;"	f	language:SML
 not_so_quick_sort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun not_so_quick_sort(xs) = $/;"	f	language:SML
 number_before_reaching_sum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_before_reaching_sum(sum, xs) = $/;"	f	language:SML
@@ -85,8 +89,10 @@ split1	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml
 splitAt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun splitAt(xs, x) = $/;"	f	language:SML
 splitup	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun splitup(xs, x) =$/;"	f	language:SML
 student_id	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type student_id = int$/;"	t	language:SML
+sum_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sum_tree root =$/;"	f	language:SML
 times_went_in	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                  let val (times_went_in, new_dividend) = fullDivide(divisor,$/;"	v	language:SML
 tl_ans	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val tl_ans = max(xs')$/;"	v	language:SML
+tree_height	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun tree_height root = $/;"	f	language:SML
 unroll	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun unroll(xs) = $/;"	f	language:SML
 unrolled	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val unrolled = unroll(x::xs)$/;"	v	language:SML
 unroll_helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun unroll_helper(xs) = $/;"	f	language:SML

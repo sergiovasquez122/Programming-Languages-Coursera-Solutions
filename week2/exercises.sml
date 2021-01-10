@@ -460,3 +460,27 @@ fun number_of_misgraded(xs) =
                                | (pass, true) => number_of_misgraded(xs')
                                | _ => 1 + number_of_misgraded(xs')
                                )
+(* Problems 5-7 use these type definitions *)
+datatype 'a tree = leaf | node of {value : 'a, left : 'a tree, right : 'a tree}
+datatype flag = leave_me_alone | prune_me
+(* 5. Write a function tree_height that accepts an 'a tree and evaluates to a
+* height of this tree. The height of a tree is the length of the longest path to
+* a left. Thus the height of a leaf is 0. *)
+fun tree_height root = 
+  case root of
+       leaf => 0
+     | node {value = _, left = l, right = r} => 1 + Int.max(tree_height l, tree_height r)
+(* 6. Write a function sum_tree that takes an int tree and evaluates to the sum
+* of all values in the node. *)
+fun sum_tree root =
+  case root of 
+       leaf => 0
+     | node {value = x, left = l, right = r} => x + sum_tree l + sum_tree r
+
+(* Problems 9-16 use this type definition for natural numbers *)
+datatype nat = ZERO | SUCC of nat
+
+fun is_positive n =
+  case n of
+       ZERO => false
+     | _ => true
