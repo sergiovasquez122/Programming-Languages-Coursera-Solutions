@@ -587,6 +587,18 @@ fun partition'(f, xs) =
                         true => (x::lhs, rhs)
                       | false => (lhs, x::rhs)
                  end )
+
+fun exists'(f, xs) = 
+  case xs of
+       [] => false
+     | x::xs' => f x orelse exists'(f, xs')
+
+fun all'(f, xs) = 
+let 
+  fun g x = not (f x)
+in 
+  not (exists'(g, xs))
+end
 (* Problems 9-16 use this type definition for natural numbers *)
 datatype nat = ZERO | SUCC of nat
 

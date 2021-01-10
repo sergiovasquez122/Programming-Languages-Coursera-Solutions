@@ -4,6 +4,7 @@ add	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^
 addAllOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addAllOpt(xs) = $/;"	f	language:SML
 addOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addOpt(x, y) = $/;"	f	language:SML
 all	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all(xs) = $/;"	f	language:SML
+all'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all'(f, xs) = $/;"	f	language:SML
 all_products	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all_products(xs) = $/;"	f	language:SML
 alternate	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun alternate(xs) = $/;"	f	language:SML
 any	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun any(xs) = $/;"	f	language:SML
@@ -23,6 +24,7 @@ divide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml
 drop'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun drop'(l, i) = $/;"	f	language:SML
 equal	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | ((s', i))::xs' => (let val equal = s' = s$/;"	v	language:SML
 equal_length	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val equal_length = length xs = length ys$/;"	v	language:SML
+exists'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun exists'(f, xs) = $/;"	f	language:SML
 factorize	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun factorize(n) = $/;"	f	language:SML
 factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val factors = generate_factors(unrolled, 1)$/;"	v	language:SML
 factors_no_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val factors_no_dups = remove_duplicates(factors)$/;"	v	language:SML
@@ -32,6 +34,7 @@ find'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	
 find_elem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun find_elem(xs, x) =$/;"	f	language:SML
 flag	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype flag = leave_me_alone | prune_me$/;"	t	language:SML
 fullDivide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun fullDivide(k, n) = $/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  fun g x = not (f x)$/;"	f	language:SML
 generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun generate_factors(xs, curr) = $/;"	f	language:SML
 getItem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getItem l = $/;"	f	language:SML
 get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun get_nth(str, n) = $/;"	f	language:SML
