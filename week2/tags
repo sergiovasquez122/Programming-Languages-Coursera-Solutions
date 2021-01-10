@@ -38,6 +38,7 @@ find_elem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.
 flag	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype flag = leave_me_alone | prune_me$/;"	t	language:SML
 fullDivide	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun fullDivide(k, n) = $/;"	f	language:SML
 g	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  fun g x = not (f x)$/;"	f	language:SML
+gardener	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun gardener(root) =$/;"	f	language:SML
 generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun generate_factors(xs, curr) = $/;"	f	language:SML
 getItem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getItem l = $/;"	f	language:SML
 getOpt'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getOpt'(opt, a) = $/;"	f	language:SML

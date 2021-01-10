@@ -476,6 +476,14 @@ fun sum_tree root =
   case root of 
        leaf => 0
      | node {value = x, left = l, right = r} => x + sum_tree l + sum_tree r
+
+fun gardener(root) =
+  case root of 
+        leaf => leaf
+     |  node {value = leave_me_alone, left = l, right = r} => node {value =
+       leave_me_alone, left = gardener l, right = gardener r}
+     | node {value = prune_me, left = l, right = r} => node ({value = leave_me_alone, left
+     = gardener l, right =gardener r})
 (* 8. Re-implement various functions provided in the SML standard library *)
 fun null' xs = 
   case xs of
