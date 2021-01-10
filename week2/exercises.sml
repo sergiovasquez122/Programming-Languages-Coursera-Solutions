@@ -682,3 +682,40 @@ datatype intSet =
                 to another *)
                 | Union of intSet * intSet (* union of the two sets *)
                 | Intersection of intSet * intSet (* intersection of the two sets *)
+
+
+fun constructFromRange(from, to) = 
+  case to < from of 
+       true => []
+     | _ => from :: constructFromRange(from + 1, to)
+
+fun intersection(xs, ys) = 
+  case xs of 
+       [] => []
+     | x::xs' =>(case exists'(fn y => y = x, ys) of
+                     true => x :: intersection(xs', ys)
+                   | false => intersection(xs', ys))
+
+fun contains(theSet, x) = 
+  case theSet of 
+       Elems xs => exists'(fn y => y = x, xs)
+     | Range {from = low, to = hi} => low <= x andalso x <= hi
+     | Union (set1, set2) => contains(set1, x) orelse contains(set2, x)
+     | Intersection(set1, set2) => (contains(set1, x) andalso contains(set2, x))
+
+fun toList(set) = 
+  case set of
+       Elems xs => remove_duplicates(xs)
+     | Range {from = lo, to = hi} => constructFromRange(lo, hi)
+     | Union(set1, set2) => remove_duplicates(append'(toList(set1), toList(set2)))
+     | Intersection(set1, set2) => remove_duplicates(intersection(toList(set1), toList(set2)))
+
+fun isEmpty(theSet) = 
+  case theSet of 
+       Elems xs => (case xs of
+                         [] => false 
+                       | _ => true)
+     | Range {from = low, to = hi} => hi < low
+     | Union(set1, set2) => (not (isEmpty(set1))) orelse (not (isEmpty(set2)))
+     | Intersection(set1, set2) => length(intersection(toList(set1),
+     toList(set2))) <> 0
