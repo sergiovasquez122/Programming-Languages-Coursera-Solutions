@@ -508,3 +508,9 @@ in
   helper(n, ZERO)
 end
 
+fun less_than(x, y) = 
+  case (x, y) of
+       (ZERO, ZERO) => false
+      |(ZERO, SUCC m) => true
+      |(SUCC m, ZERO) => true
+      |(SUCC m, SUCC n) => less_than(m, n)

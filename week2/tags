@@ -46,6 +46,7 @@ isSortedCmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercise
 is_leap_year	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  let fun is_leap_year(year) = $/;"	f	language:SML
 is_older	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun is_older(xs : (int * int * int), ys : (int * int * int)) = $/;"	f	language:SML
 is_positive	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun is_positive n =$/;"	f	language:SML
+less_than	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun less_than(x, y) = $/;"	f	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                     val (lhs, rhs) = splitAt(xs', x)$/;"	v	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val (lhs, rhs) = divide(xs')$/;"	v	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val (lhs, rhs) = divide(l)$/;"	v	language:SML
