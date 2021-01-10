@@ -484,3 +484,27 @@ fun is_positive n =
   case n of
        ZERO => false
      | _ => true
+
+exception Negative 
+
+fun pred n = 
+  case n of 
+       ZERO => raise Negative
+     | SUCC(m) => m
+
+fun nat_to_int n = 
+  case n of
+       ZERO => 0
+     | SUCC m => 1 + nat_to_int m
+
+fun int_to_nat n = 
+let 
+  fun helper(n, acc) = 
+    case (n < 0, n = 0) of
+        (true, _) => raise Negative
+       |(_, true) => acc
+       |(false, false) => helper(n - 1, SUCC acc)
+in
+  helper(n, ZERO)
+end
+
