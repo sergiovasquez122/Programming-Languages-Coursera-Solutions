@@ -487,10 +487,10 @@ fun length' xs =
        [] => 0
      | _::xs' => 1 + length' xs'
 
-fun append(xs, ys) = 
+fun append'(xs, ys) = 
   case xs of 
        [] => ys
-     | x::xs' => x :: append(xs', ys)
+     | x::xs' => x :: append'(xs', ys)
 
 fun hd'(xs) = 
   case xs of
@@ -508,6 +508,14 @@ fun last'(xs) =
      | x::[] => x
      | x::xs' => last' xs'
 
+fun nth(l, i) = 
+  case (i < 0, i = 0) of
+       (true, _) => raise Subscript
+     | (_, true) => hd' l
+     | (false, false) => (case l of
+                               [] => raise Subscript
+                             | _::l' => nth(l', i - 1))
+
 fun rev' l = 
 let 
   fun helper(l, acc) = 
@@ -517,7 +525,6 @@ let
 in
   helper(l, [])
 end
-
 (* Problems 9-16 use this type definition for natural numbers *)
 datatype nat = ZERO | SUCC of nat
 
