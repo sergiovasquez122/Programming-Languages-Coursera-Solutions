@@ -516,6 +516,24 @@ fun nth(l, i) =
                                [] => raise Subscript
                              | _::l' => nth(l', i - 1))
 
+fun take'(l, i) = 
+  case (i < 0, i = 0) of
+       (true, _) => raise Subscript
+     | (_, true) => []
+     | (false, false) => (case l of
+                              [] => raise Subscript
+                            | x::l' => x :: take'(l', i - 1)
+                            )
+
+fun drop'(l, i) = 
+  case (i < 0, i = 0) of
+       (true, _) => raise Subscript
+     | (_, true) => l
+     | (false, false) => (case l of 
+                               [] => raise Subscript
+                             | x::l' => drop'(l', i - 1)
+                             )
+
 fun rev' l = 
 let 
   fun helper(l, acc) = 
