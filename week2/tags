@@ -5,16 +5,24 @@ addAllOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.
 addOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addOpt(x, y) = $/;"	f	language:SML
 all	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all(xs) = $/;"	f	language:SML
 all'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all'(f, xs) = $/;"	f	language:SML
+all_except_option	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun all_except_option(xs, x) = $/;"	f	language:SML
 all_products	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all_products(xs) = $/;"	f	language:SML
+all_same_color	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun all_same_color(cs) = $/;"	f	language:SML
 alternate	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun alternate(xs) = $/;"	f	language:SML
 any	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun any(xs) = $/;"	f	language:SML
 append'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun append'(xs, ys) = $/;"	f	language:SML
 BadList	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^exception BadList$/;"	e	language:SML
+card	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^type card = suit * rank$/;"	t	language:SML
+card_color	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun card_color(c) = $/;"	f	language:SML
+card_sum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^  val card_sum = sum_cards(cs) $/;"	v	language:SML
+card_value	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun card_value(c) = $/;"	f	language:SML
 cmp	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun cmp(x, y) = x >= y$/;"	f	language:SML
+color	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^datatype color = Red | Black$/;"	t	language:SML
 concat'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun concat' l = $/;"	f	language:SML
 constructFromRange	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun constructFromRange(from, to) = $/;"	f	language:SML
 contains	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun contains(theSet, x) = $/;"	f	language:SML
 cumsum	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun cumsum(xs) = $/;"	f	language:SML
+current_status	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^  fun current_status(held_cards, card_list, move_list) = $/;"	f	language:SML
 dates_in_month	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_month(dates, month) = $/;"	f	language:SML
 dates_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_months(dates, months) = $/;"	f	language:SML
 dates_in_months_challenge	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun dates_in_months_challenge(dates, months) = $/;"	f	language:SML
@@ -43,6 +51,8 @@ generate_factors	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exe
 getItem	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getItem l = $/;"	f	language:SML
 getOpt'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun getOpt'(opt, a) = $/;"	f	language:SML
 get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun get_nth(str, n) = $/;"	f	language:SML
+get_substitutions1	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun get_substitutions1(xs, s) = $/;"	f	language:SML
+get_substitutions2	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun get_substitutions2(xs, s) = $/;"	f	language:SML
 grade	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type grade = int$/;"	t	language:SML
 greeting	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun greeting(s) = $/;"	f	language:SML
 has_passed	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun has_passed(g) = $/;"	f	language:SML
@@ -57,6 +67,10 @@ helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun helper(acc, y) =$/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun helper(current_n, divisor) = $/;"	f	language:SML
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^let fun helper(xs, aux) =$/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^  fun helper(cs, acc) =$/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^  fun helper(xs) = $/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^  fun helper(xs, acc) = $/;"	f	language:SML
+IllegalMove	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^exception IllegalMove$/;"	e	language:SML
 intersection	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun intersection(xs, ys) = $/;"	f	language:SML
 intSet	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype intSet = $/;"	t	language:SML
 int_to_nat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun int_to_nat n = $/;"	f	language:SML
@@ -90,6 +104,7 @@ month_left	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises
 month_range	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun month_range(day1, day2) = $/;"	f	language:SML
 month_right	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val month_right = #2 ys$/;"	v	language:SML
 month_str	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    val month_str = get_nth(months, month)$/;"	v	language:SML
+move	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^datatype move = Discard of card | Draw$/;"	t	language:SML
 mult	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun mult(x, y) = $/;"	f	language:SML
 multiply	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun multiply(xs) = $/;"	f	language:SML
 nat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype nat = ZERO | SUCC of nat$/;"	t	language:SML
@@ -105,21 +120,28 @@ number_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exe
 number_in_months_challenge	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_in_months_challenge(dates, months) = $/;"	f	language:SML
 number_of_misgraded	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_of_misgraded(xs) =$/;"	f	language:SML
 number_passed	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun number_passed(xs) = $/;"	f	language:SML
+officiate	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun officiate(card_list, move_list, goal) = $/;"	f	language:SML
 oldest	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun oldest(dates) = $/;"	f	language:SML
 partition'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun partition'(f, xs) = $/;"	f	language:SML
 pass_fail	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^datatype pass_fail = pass | fail$/;"	t	language:SML
 pass_or_fail	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun pass_or_fail({grade = g, id = x}) =$/;"	f	language:SML
 pred	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun pred n = $/;"	f	language:SML
+prelim_score	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^  val prelim_score = if card_sum > goal $/;"	v	language:SML
 qsort	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun qsort(xs) = $/;"	f	language:SML
+rank	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^datatype rank = Jack | Queen | King | Ace | Num of int$/;"	t	language:SML
 reasonable_date	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun reasonable_date(day, month, year) = $/;"	f	language:SML
+remove_card	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun remove_card(cs, c, e) = $/;"	f	language:SML
 remove_duplicates	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun remove_duplicates(xs) = $/;"	f	language:SML
 remove_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val remove_dups = remove_duplicates(months)$/;"	v	language:SML
 remove_dups	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^  val remove_dups = remove_duplicates(months)$/;"	v	language:SML
 repeat	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun repeat(xs, ys) = $/;"	f	language:SML
+rest	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^                  else let val rest = remove_card(cs', c, e)$/;"	v	language:SML
 rev'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun rev' l = $/;"	f	language:SML
 revAppend'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun revAppend'(l1, l2) = $/;"	f	language:SML
 reverse	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^    fun reverse(xs, acc) = $/;"	f	language:SML
 rhs_sorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val rhs_sorted = not_so_quick_sort(rhs)$/;"	v	language:SML
+score	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun score(cs, goal) =$/;"	f	language:SML
+similar_names	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun similar_names(xs, {first=f,middle=m,last=l}) = $/;"	f	language:SML
 sorted	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^           val sorted = qsort(factors_no_dups)$/;"	v	language:SML
 sortedMerge	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sortedMerge(xs, ys) = $/;"	f	language:SML
 split1	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^     | x'::xs' => let val (split1, split2) = splitAt(xs',x)$/;"	v	language:SML
@@ -128,8 +150,23 @@ splitAt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sm
 splitup	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun splitup(xs, x) =$/;"	f	language:SML
 student_id	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^type student_id = int$/;"	t	language:SML
 sub	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sub(x, y) = $/;"	f	language:SML
+subs_xs	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^  val subs_xs = get_substitutions1(xs, f)$/;"	v	language:SML
+suit	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^datatype suit = Clubs | Diamonds | Hearts | Spades$/;"	t	language:SML
+sum_cards	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun sum_cards(cs) = $/;"	f	language:SML
 sum_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sum_tree root =$/;"	f	language:SML
 take'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun take'(l, i) = $/;"	f	language:SML
+test10	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test10 = score ([(Hearts, Num 2),(Clubs, Num 4)],10) = 4$/;"	v	language:SML
+test11	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test11 = officiate ([(Hearts, Num 2),(Clubs, Num 4)],[Draw], 15) = 6$/;"	v	language:SML
+test12	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test12 = officiate ([(Clubs,Ace),(Spades,Ace),(Clubs,Ace),(Spades,Ace)],$/;"	v	language:SML
+test13	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test13 = ((officiate([(Clubs,Jack),(Spades,Num(8))],$/;"	v	language:SML
+test2	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test2 = get_substitutions1 ([["foo"],["there"]], "foo") = []$/;"	v	language:SML
+test3	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test3 = get_substitutions2 ([["foo"],["there"]], "foo") = []$/;"	v	language:SML
+test4	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test4 = similar_names$/;"	v	language:SML
+test5	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test5 = card_color (Clubs, Num 2) = Black$/;"	v	language:SML
+test6	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test6 = card_value (Clubs, Num 2) = 2$/;"	v	language:SML
+test7	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test7 = remove_card ([(Hearts, Ace)], (Hearts, Ace), IllegalMove) = []$/;"	v	language:SML
+test8	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test8 = all_same_color [(Hearts, Ace), (Hearts, Ace)] = true$/;"	v	language:SML
+test9	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test9 = sum_cards [(Clubs, Num 2),(Clubs, Num 2)] = 4$/;"	v	language:SML
 times_went_in	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                  let val (times_went_in, new_dividend) = fullDivide(divisor,$/;"	v	language:SML
 tl'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun tl'(xs) = $/;"	f	language:SML
 tl_ans	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^                    val tl_ans = max(xs')$/;"	v	language:SML
