@@ -2,19 +2,19 @@
 * Return None if the string is not in the list, else return SOME lst where lst
 * is identical to the argument list except for the string si not in it. you may
 * assume the string is in the list at most once*)
-fun all_except_option(xs, x) = 
+fun all_except_option(x, xs) = 
   case xs of
        [] => NONE
      | x'::xs' => if x' = x
                  then SOME (xs')
-                 else (case all_except_option(xs', x) of
+                 else (case all_except_option(x, xs') of
                            NONE => NONE
                          | SOME xs' => SOME(x'::xs'))
 
 fun get_substitutions1(xs, s) = 
   case xs of 
        [] => []
-     | x::xs' => (case all_except_option(x, s) of
+     | x::xs' => (case all_except_option(s, x) of
                       NONE => get_substitutions1(xs', s)
                     | SOME(x') => x'@ get_substitutions1(xs', s))
 
@@ -23,7 +23,7 @@ let
   fun helper(xs, acc) = 
     case xs of
          [] => acc
-       | x::xs' => (case all_except_option(x, s) of
+       | x::xs' => (case all_except_option(s, x) of
                          NONE => helper(xs', acc)
                        | SOME(x') => helper(xs', acc @ x')) 
 in 

@@ -4,6 +4,9 @@
 * "homeworkname.sml"; *)
 (* All the tests should evaluate to true. For example, the REPL should say: val
 * test1 = true : bool *)
+
+val test1 = all_except_option ("string", ["string"]) = SOME []
+
 val test2 = get_substitutions1 ([["foo"],["there"]], "foo") = []
 
 val test3 = get_substitutions2 ([["foo"],["there"]], "foo") = []
@@ -32,7 +35,6 @@ val test11 = officiate ([(Hearts, Num 2),(Clubs, Num 4)],[Draw], 15) = 6
 
 val test12 = officiate ([(Clubs,Ace),(Spades,Ace),(Clubs,Ace),(Spades,Ace)],
                         [Draw,Draw,Draw,Draw,Draw], 42) = 3
-
 val test13 = ((officiate([(Clubs,Jack),(Spades,Num(8))],
                          [Draw,Discard(Hearts,Jack)], 42); false) 
                                                  handle IllegalMove => true)
