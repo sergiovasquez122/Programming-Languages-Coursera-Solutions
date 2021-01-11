@@ -1,7 +1,3 @@
-(*Write a function all_exception_option, which takes a string and  string list.
-* Return None if the string is not in the list, else return SOME lst where lst
-* is identical to the argument list except for the string si not in it. you may
-* assume the string is in the list at most once*)
 fun all_except_option(x, xs) = 
   case xs of
        [] => NONE
