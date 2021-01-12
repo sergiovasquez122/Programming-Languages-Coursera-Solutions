@@ -1,0 +1,12 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+a	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun a x = x$/;"	f	language:SML
+b	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun b x = x$/;"	f	language:SML
+backup1	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun backup1(f, g) = fn x => case f x of NONE => g x$/;"	f	language:SML
+backup2	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun backup2(f, g) = fn x => f x handle _ => g x$/;"	f	language:SML
+c	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun c x = x$/;"	f	language:SML
+compose	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun compose(f, g) = fn x => f(g x)$/;"	f	language:SML
+compositions	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun compositions x = x !> b !> c !> a$/;"	f	language:SML
+sqrt_of_abs	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun sqrt_of_abs i = Math.sqrt (Real.fromInt(abs i))$/;"	f	language:SML
+sqrt_of_abs_better	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^val sqrt_of_abs_better = Math.sqrt o Real.fromInt o abs$/;"	v	language:SML
+sqrt_of_abs_different	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun sqrt_of_abs_different i = i !> abs !> Real.fromInt !> Math.sqrt$/;"	f	language:SML
+x	/home/sergio/Programming-Languages-Coursera-Solutions/week3/combining_functions.sml	/^fun x !> f = f x$/;"	f	language:SML
