@@ -11,3 +11,5 @@ fun longest_string_helper f sl = foldl (fn(x, y) => let val x_size =
 val longest_string3 = longest_string_helper (fn(x, y) => x > y)
 
 val longest_string4 = longest_string_helper (fn(x, y) => x >= y)
+
+val rev_string = implode o rev o explode o (String.map Char.toUpper)
