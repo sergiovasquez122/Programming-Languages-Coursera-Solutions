@@ -17,6 +17,8 @@ fun fixed_point f x =
 
 fun map2 f (x, y) = (f x, f y)
 
+fun app_all f g x = foldr (fn (x, y) => x @ y) [] (map f (g x))
+
 fun foldl f acc xs = 
   case xs of
        [] => acc
