@@ -45,6 +45,9 @@ fun unfold f seed  =
        NONE => []
      | SOME(b, a) => b :: unfold f a
 
+fun factorial n = 
+  foldl (fn(x, y) => x * y) 1 (unfold (fn n => if n = 0 then NONE else SOME(n, n - 1)) n)
+
 fun map f xs = 
   case xs of
        [] => []

@@ -1,0 +1,19 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+'a	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^datatype 'a tree = leaf | node of {value : 'a, left : 'a tree, right : 'a tree}$/;"	t	language:SML
+app_all	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun app_all f g x = foldr (fn (x, y) => x @ y) [] (map f (g x))$/;"	f	language:SML
+compose_opt	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun compose_opt f g x = $/;"	f	language:SML
+do_until	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun do_until f p x = $/;"	f	language:SML
+factorial	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun factorial n = $/;"	f	language:SML
+filter_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun filter_over_tree f root = $/;"	f	language:SML
+filter_with_foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun filter_with_foldr f xs = foldr(fn(x, xs) => if f x then x::xs else xs) [] xs$/;"	f	language:SML
+fixed_point	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun fixed_point f x = $/;"	f	language:SML
+foldl	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun foldl f acc xs = $/;"	f	language:SML
+foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun foldr f acc xs =$/;"	f	language:SML
+fold_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun fold_over_tree f acc root = $/;"	f	language:SML
+lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^                        val (lhs, rhs) = partition f xs'$/;"	v	language:SML
+map	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map f xs = $/;"	f	language:SML
+map2	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map2 f (x, y) = (f x, f y)$/;"	f	language:SML
+map_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map_over_tree f root = $/;"	f	language:SML
+map_with_foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map_with_foldr f xs = foldr (fn(x, xs) => (f x)::xs) [] xs$/;"	f	language:SML
+partition	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun partition f xs = $/;"	f	language:SML
+unfold	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun unfold f seed  = $/;"	f	language:SML
