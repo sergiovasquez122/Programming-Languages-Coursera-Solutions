@@ -10,6 +10,9 @@ fun do_until f p x =
        false => x
      | true => do_until f p (f x)
 
+fun factorial n = 
+  factorial(n + 1) * do_until (fn x => x + 1) (fn x => x = n) 1
+
 fun fixed_point f x = 
   case (f x = x) of
     true => x
