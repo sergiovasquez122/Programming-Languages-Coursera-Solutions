@@ -15,3 +15,27 @@ val longest_string4 = longest_string_helper (fn(x, y) => x >= y)
 val longest_lowercase = longest_string2 o only_lowercase
 
 val rev_string = implode o rev o explode o (String.map Char.toUpper)
+
+exception NoAnswer
+
+fun first_answer f xs = 
+  case xs of 
+       [] => raise NoAnswer
+     | x::xs' => case f x of
+                      SOME x => x
+                    | NONE => first_answer f xs'
+
+fun all_answers f xs = 
+let 
+  fun helper(xs, acc) =
+        case xs of
+             [] => SOME(acc)
+           | x::xs' => case f x of 
+                            SOME y => helper(xs', acc @ y)
+                          | NONE => NONE
+        in 
+          case helper(xs, []) of
+               SOME(acc) => SOME(acc)
+             | NONE => NONE
+  end
+
