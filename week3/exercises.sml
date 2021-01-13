@@ -48,3 +48,24 @@ fun map f xs =
 fun map_with_foldr f xs = foldr (fn(x, xs) => (f x)::xs) [] xs
 
 fun filter_with_foldr f xs = foldr(fn(x, xs) => if f x then x::xs else xs) [] xs
+
+datatype 'a tree = leaf | node of {value : 'a, left : 'a tree, right : 'a tree}
+
+fun map_over_tree f root = 
+  case root of 
+       leaf => leaf
+     | node {value = x, left = l, right = r} => node {value = f x, left = map_over_tree f l, right = map_over_tree f r}
+
+fun fold_over_tree f acc root = 
+  case root of
+       leaf => acc
+     | node {value = x, left = l, right = r} => f(x, (fold_over_tree f acc l), (fold_over_tree f acc r))
+
+fun filter_over_tree f root = 
+  case root of 
+       leaf => leaf
+     | node {value = x, left = l, right = r} => case f x of
+                                                     false => leaf
+                                                   | true => node {value = x,
+                                                   left = filter_over_tree f l,
+                                                   right = filter_over_tree f r}
