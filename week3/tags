@@ -4,6 +4,7 @@ app_all	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sm
 compose_opt	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun compose_opt f g x = $/;"	f	language:SML
 do_until	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun do_until f p x = $/;"	f	language:SML
 factorial	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun factorial n = $/;"	f	language:SML
+factorial	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun factorial n = $/;"	f	language:SML
 filter_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun filter_over_tree f root = $/;"	f	language:SML
 filter_with_foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun filter_with_foldr f xs = foldr(fn(x, xs) => if f x then x::xs else xs) [] xs$/;"	f	language:SML
 fixed_point	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun fixed_point f x = $/;"	f	language:SML
@@ -17,3 +18,8 @@ map_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exerci
 map_with_foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map_with_foldr f xs = foldr (fn(x, xs) => (f x)::xs) [] xs$/;"	f	language:SML
 partition	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun partition f xs = $/;"	f	language:SML
 unfold	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun unfold f seed  = $/;"	f	language:SML
+w	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val w = ((!y) + (!z)) (* 85 *)$/;"	v	language:SML
+x	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val x = ref 42$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val y = ref 42$/;"	v	language:SML
+z	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val z = x$/;"	v	language:SML
+_	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val _ = x := 43$/;"	v	language:SML
