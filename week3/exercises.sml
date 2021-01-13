@@ -40,6 +40,11 @@ fun partition f xs =
                        | true => (lhs, x::rhs)
                   end)
 
+fun unfold f seed  = 
+  case f seed of
+       NONE => []
+     | SOME(b, a) => b :: unfold f a
+
 fun map f xs = 
   case xs of
        [] => []
