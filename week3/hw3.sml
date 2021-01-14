@@ -70,3 +70,26 @@ fun count_wildcards p = g (fn() => 1) (fn(x) => 0) p
 fun count_wild_and_variable_lengths p = g (fn() => 1) (fn(x) => String.size x) p
 
 fun count_a_var (s, p) = g (fn() => 0) (fn(x) => if x = s then 1 else 0) p
+
+fun check_pat p = 
+let fun no_repeats xs = 
+  case xs of 
+       [] => true
+     | x::xs' => not (List.exists (fn y => x = y) xs') andalso no_repeats xs'
+
+fun s f1 f2 p =
+let 
+  val r = s f1 f2 
+  in 
+     case p of
+     WildcardP => f1()  
+   | VariableP x => f2 x
+   | ConstructorP(_, p) => r p
+   | TupleP ps => List.foldl (fn(p, i) => (r p) @ i) [] ps
+   | _ => []
+end
+
+fun to_string_list p = s (fn() => []) (fn(x) => [x]) p
+in 
+  no_repeats(to_string_list p)
+end
