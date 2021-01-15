@@ -96,7 +96,7 @@ fun match(v, p) =
   case (v, p) of
        (_,WildcardP) => SOME []
      | (Unit, UnitP) => SOME []
-     | (_, VariableP s) => SOME [(v, s)]
+     | (_, VariableP s) => SOME [(s, v)]
      | (Constant i, ConstantP j) => if i = j
                                     then SOME []
                                     else NONE
@@ -120,7 +120,7 @@ fun match(v, p) =
                                                     end)
       | _ => NONE
 
-fun first_match(v, ps) = 
+fun first_match v ps = 
 let 
   val zipped_list = map (fn x => (v, x)) ps
   val first = first_answer match zipped_list
