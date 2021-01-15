@@ -1,3 +1,5 @@
+(* We can pass one function as an argument to another function*)
+(* elegant stratgey for factoring out common code *)
 fun increment_n_times_lame(n, x) = 
   if n = 0
   then x
