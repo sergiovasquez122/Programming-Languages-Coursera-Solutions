@@ -1,0 +1,69 @@
+#lang racket
+
+(provide (all-defined-out))
+
+(define (max-of-list xs)
+  (cond [(not (list? xs)) (error "max-of-list not given list")]
+        [(null? xs) (error "max-of-list given empty list")]
+        [(null? (cdr xs)) (car xs)]
+        [true (let ([tlans (max-of-list (cdr xs))]
+                    [hd (car xs)])
+                (if (> tlans hd)
+                    tlans
+                    hd))]))
+; Racket has 4 ways to define local variables
+; - let
+; - let*
+; - let rec
+; - define
+; Variety is good: they have different semantics
+; - Use the one most convenient for your needs, which helps communicate your intent to people reading your code
+; - If any will work, use let
+; Like in ML, the 3 kinds of let-expressions can appear anywhere
+
+; A let expression can bind any number of local variables
+; - Notice where all the parentheses are
+; The expressions are all evaluated in the environment from before the let-expression
+; - Except the body can use all the local variables
+; - This is not how ML let-expresssions work
+; - Convenient for things like (let ([x y] [y x]) ... )
+(define (silly-double x)
+  (let ([x (+ x 3)] ;uses x the parameter and gives it to a variable x
+        [y (+ x 2)]); use x the parameter and gives it to a variable y, does not use x defined in let
+    (+ x y -5)))
+; this style is fine if you're not attempting to shadow variable or you are not reusing variable name from higher-scope
+
+; let*
+; syntactically, a let* expression is a let-expression with 1 more character
+; The expression evaluated in the environment produced from the previous bindings
+; - Can repeat bindings
+; - This is how ML let-expressions work
+(define (silly-double2 x)
+  (let* ([x (+ x 3)] ; x = x + 3
+         [y (+ x 2)]) ; y = x + 5, we're using the x defined in the let* expression 
+    (+ x y -8)))
+; letrec
+; Syntatically, a letrec expression is also the same
+; The expressions are evaluated in the environment that includes all the bindings
+(define (silly-triple x)
+  (letrec ([y (+ x 2)]
+           [f (λ(z) (+ z y w x))] ; uses w from later binding, the use of w is inside a function which will not be evaluted until the function is called
+           [w (+ x 7)]) 
+    (f -9))); w is initialized and function will look up to compute result
+; Needed for mutual recursion
+; But expressions are still evaluated in order: accessing an uninitialized binding would produce an error
+; - Would bad style and surely a bug
+; - Remember function bodied not evaluted until called
+
+; letrec is idead for recursion
+(define (silly-mod2 x)
+  (letrec
+    ([even? (λ(x) (if (zero? x) true (odd? (- x 1))))]
+     [odd? (λ(x) (if (zero? x) false (even? (- x 1))))])
+    (if (even? x) 0 1)))
+; Do not use later bindings except inside functions
+; - This example will cause an error if x is not false
+(define (bad-letrec x)
+  (letrec ([y z]
+           [z 13])
+    (if x y z)))
