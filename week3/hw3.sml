@@ -39,8 +39,6 @@ let
              | NONE => NONE
   end
 
-
-
 datatype pattern = WildcardP 
                  | VariableP of string
                  | UnitP
@@ -93,3 +91,40 @@ fun to_string_list p = s (fn() => []) (fn(x) => [x]) p
 in 
   no_repeats(to_string_list p)
 end
+
+fun match(v, p) = 
+  case (v, p) of
+       (_,WildcardP) => SOME []
+     | (Unit, UnitP) => SOME []
+     | (_, VariableP s) => SOME [(v, s)]
+     | (Constant i, ConstantP j) => if i = j
+                                    then SOME []
+                                    else NONE
+     | (Tuple(vs), TupleP(ps)) => if length vs <> length ps
+                                  then NONE
+                                  else let 
+                                    val vs_ps = ListPair.zip(vs, ps)
+                                    val matches = all_answers match vs_ps
+                                       in 
+                                         case matches of 
+                                              NONE => NONE
+                                            | SOME matches => SOME matches
+                                       end
+     | (Constructor(s1, v), ConstructorP(s2, p)) => (let 
+                                                   val matches = match(v, p) 
+                                                   in if s1 = s2 then 
+                                                       case matches of 
+                                                            NONE => NONE
+                                                          | SOME xs => SOME xs
+                                                      else NONE 
+                                                    end)
+      | _ => NONE
+
+fun first_match(v, ps) = 
+let 
+  val zipped_list = map (fn x => (v, x)) ps
+  val first = first_answer match zipped_list
+in 
+  SOME first
+end 
+handle NoAnswer => NONE
