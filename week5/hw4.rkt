@@ -18,3 +18,7 @@
   (cond [(= n 0) null]
         [true (let* ([pr (s)])
                 (cons (car pr) (stream-for-n-steps (cdr pr) (- n 1))))]))
+
+(define funny-number-stream
+  (letrec ([f (λ(x) (cons (if (= (remainder x 5) 0) (- 0 x) x) (λ() (f (+ x 1)))))])
+    (λ() (f 1)))) 
