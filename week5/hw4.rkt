@@ -21,4 +21,9 @@
 
 (define funny-number-stream
   (letrec ([f (λ(x) (cons (if (= (remainder x 5) 0) (- 0 x) x) (λ() (f (+ x 1)))))])
-    (λ() (f 1)))) 
+    (λ() (f 1))))
+
+(define dan-then-dog
+  (letrec ([f (λ(x) (cons x (λ() (f (if (equal? "dan.jpg" x) "dog.jpg" "dan.jpg")))))])
+    (λ() (f "dan.jpg"))))
+
