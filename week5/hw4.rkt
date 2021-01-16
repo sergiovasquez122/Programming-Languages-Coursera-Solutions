@@ -27,3 +27,12 @@
   (letrec ([f (λ(x) (cons x (λ() (f (if (equal? "dan.jpg" x) "dog.jpg" "dan.jpg")))))])
     (λ() (f "dan.jpg"))))
 
+(define (stream-maker fn arg)
+  (letrec ([f (λ(x) (cons x (λ() (f (fn x arg)))))])
+    (λ() (f 1))))
+
+
+(define (stream-add-zero s)
+  (letrec ([f (λ(x) (let* ([pr (x)])
+                      (cons (cons (car pr) 0) (λ() (f (cdr pr))))))])
+    (λ() (f s))))
