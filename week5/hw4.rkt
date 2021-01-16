@@ -37,3 +37,13 @@
                         [y (list-nth-mod ys n)])
                    (cons (cons x y) (λ() (f (+ n 1))))))])
     (λ() (f 0))))
+
+(define (vector-assoc v vec)
+  (let* ([size (vector-length vec)])
+    (letrec ([f (λ(n) (cond [(= n size) false]
+                            [(pair? (vector-ref vec n))
+                             (if (equal? (car (vector-ref vec n)) v)
+                                 (vector-ref vec n)
+                                 (f (+ n 1)))]
+                            [true (f (+ n 1))]))])
+      (f 0))))
