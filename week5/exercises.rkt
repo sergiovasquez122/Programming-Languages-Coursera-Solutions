@@ -13,6 +13,15 @@
   (letrec ([f (λ(x y) (cons x (λ() (f y (+ x y)))))])
     (λ() (f 0 1))))
 
+(define (stream-until f s)
+  (letrec ([g (λ(x)
+                (let* ([pr (x)]
+                       [hd (car pr)]
+                       [tl (cdr pr)])
+                  (cond [(f hd) (cons hd (g tl))]
+                        [true null])))])
+    (g s)))
+
 (define (stream-map f s)
   (letrec ([g (λ(x)
                 (let* ([pr (x)]
@@ -31,3 +40,11 @@
                        [tl2 (cdr pr2)])
                   (cons (cons hd1 hd2) (λ()(g tl1 tl2)))))])
     (λ()(g s1 s2))))
+; We can't write a function to reverse a stream since this would require us to construct an infinite sequence to be able to reverse it
+(define (interleave s1 s2)
+  (letrec ([g (λ(x y)
+                (let* ([pr (x)]
+                       [hd (car pr)]
+                       [tl (cdr pr)])
+                  (cons hd (λ() (g y tl)))))])
+    (λ() (g s1 s2))))
