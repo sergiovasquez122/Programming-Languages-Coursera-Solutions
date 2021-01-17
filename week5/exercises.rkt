@@ -48,3 +48,9 @@
                        [tl (cdr pr)])
                   (cons hd (λ() (g y tl)))))])
     (λ() (g s1 s2))))
+
+(define (sqrt-stream n)
+  (letrec ([f (λ (x)
+                (let* ([result (* .5 (+ x (/ n x)))])
+                  (cons result (λ() (f result)))))])
+    (λ() (f n))))
