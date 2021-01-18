@@ -47,3 +47,19 @@
                                  (f (+ n 1)))]
                             [true (f (+ n 1))]))])
       (f 0))))
+
+(define (cached-assoc xs n)
+  (letrec ([vec (make-vector n)]
+           [idx 0]
+           [f (λ(x)
+                (let ([ans (vector-assoc x vec)])
+                  (if ans
+                      (cdr ans)
+                      (let ([new-ans (assoc x xs)])
+                        (if (not new-ans)
+                            false
+                            (begin
+                              (vector-set! vec idx new-ans)
+                              (set! idx (remainder (+ idx 1) n))
+                              new-ans))))))])
+    f))
