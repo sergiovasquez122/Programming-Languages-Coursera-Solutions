@@ -259,3 +259,94 @@ This is not static vs dynamic checking
 - More like changing evalution rules of language
 
 Racket generally less lenient on these things e.g Ruby
+
+Static vs Dynamic Typing
+
+Having carefully stated facts about static checking
+can now consider arguments about which is better:
+static checking or dynamic checking
+
+Remember most languages do some of each
+- For example, perhaps types for primitives are checked statically, but array bounds are not
+
+In favor of Dynamic typing
+
+Claim 1a: Dynamic is more convenient
+
+Dynamic typing lets you build a heterogenous list or return a number of a string without workarounds
+
+(define (f y)
+ (if (> y 0) (+ y ) "hi"))
+
+(let ([ans (f x)])
+ (if (number? ans) (number->string ans) ans ))
+
+datatype t = Int of int | String of string
+fun f y = if y > 0 then Int(y + y) else String "hi"
+
+case f x of
+     int i => Int.toString i
+   | String s => s
+
+claim for static typing
+
+Claim 1b: Static is more convenient
+
+Can assume data has the expected tyep without cluttering code with dynamic checks or having errors errors far from the logical mistake
+
+(define (cube x)
+ (if (not (number? x))
+     (error "bad arguments")
+     (* x x x)))
+
+(cube 7)
+
+fun cube x = x * x * 
+
+cube 7 
+
+In favor of dynamic typing 
+
+Claim 2a: static prevents useful programs
+
+Any sound static type system forbids programs that do nothign wrong, forcing programmers to code around limitations
+
+(define (f g)
+(cons (g 7) (g true)))
+
+(define pair_of_pairs
+       (f (lambda (x) (cons x x))))
+
+fun f g = (g 7, g true)
+
+val pair_of_pairs = f (fn x => (x, x))
+
+Which of the follwing is true?
+
+Static typing is more convenient than
+dynamic typing -- it allows you to build heterogeneous lists
+
+Dynamic typing is more convenient than static typing -- it checks for type errors so you don't have to 
+
+Static typing never prevents useful programs.
+
+Static typing is more convenient than dynamic typing -- it checks for type errors so you don't have to 
+
+4th one is true
+
+claim 2b: Static lets you tag as needed
+
+Rather than suffer time, space and late-errors costs of tagging everythign, statically typed langauges let programmers "tag as needed"
+
+In the extreme, can use the "TheOneRacketType" in ML
+- Extreme rarely needed in practice
+
+Claim 3a: Static catches bug earlier
+
+Static typing catches many simple bugs as soon as "compiled"
+- Since such bugs are always caught, no need to test for them
+- In fact, can code less carefully and "lean on" type-checker
+
+Claim 3b: Static catches only easy bugs
+
+But static often catches only "easy" bugs, so you still have to test your functions, which should find the "easy" bugs too
