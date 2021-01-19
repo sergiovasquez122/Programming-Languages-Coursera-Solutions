@@ -51,6 +51,18 @@
 
 (define (sqrt-stream n)
   (letrec ([f (λ (x)
-                (let* ([result (* .5 (+ x (/ n x)))])
+                (let* ([result (* 0.5 (+ x (/ n x)))])
                   (cons result (λ() (f result)))))])
-    (λ() (f n))))
+    ((λ()(f n)))))
+
+(define-syntax perform
+  (syntax-rules (if unless)
+    [(perform e1 if e2) (let*([v2 e2])
+                          (if v2
+                              e1
+                              v2))
+                        ]
+    [(perform e1 unless e2) (let*([v2 e2])
+                              (if (not v2)
+                                  e1
+                                  v2))]))
