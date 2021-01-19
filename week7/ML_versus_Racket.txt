@@ -350,3 +350,104 @@ Static typing catches many simple bugs as soon as "compiled"
 Claim 3b: Static catches only easy bugs
 
 But static often catches only "easy" bugs, so you still have to test your functions, which should find the "easy" bugs too
+
+Static vs Dynamic typing
+
+Claim 4a: Static typing is faster
+
+Language implementation:
+- Does not need to store tags (space, time)
+- Does not need to check tags (time)
+
+Your code:
+- Does not need to check arguments and results
+
+Claim 4b: Dynamic typing is faster
+
+Language implementation:
+- Can use optimization to remove unnecessry tags and tests
+- While that is hard in general, it is often easier for the performance-critical parts of a program
+
+Your code:
+- Do not need to "code around" type-system limitations with extra tags, functions etc.
+
+Claim 5a: Code reuse easier with dynamic
+
+Without a restrictive type system, more code can just be reused with data of different types
+
+- If you use cons cells for everything, libraries that work on cons cells are useful
+
+- Collections libaries are amazingly useful but have complicated static types
+
+Claim 5b: Code reuse easier with static
+
+- Modern type systems should support reasonable code reuse with features like generics and subtyping
+
+- If you use cons cell for everything, you will confus what represents what and get hard-to-debug errors
+
+-- Use separate static types to keep ideas separate
+-- Static types help avoid library misuse
+
+So far
+
+Considered 5 things important when writing code:
+1. Convenience
+2. Not preventing useful programs
+3. Catching bugs early
+4. Performance
+5. Code reuses
+
+But took the naive view that software is developed by taking an existing spec, coding it up, testing it, and declaring victory
+
+reality:
+- Often a lot of prototyping before spec is stable
+- Often a lot of maintenance / evolution after version 1.0
+
+Claim 6a: Dynamic better for prototyping
+Early on, you may not know what cases you need in datatypes and functions
+- But static typing disallows code without having all cases;
+  dynamic lets incomplete programs run
+- So you make premature commitments to data structures
+- And end up writing code to appease the type-checker that you later throw away
+-- Particulary frustrating while prototyping
+
+Claim 6b: Static better for prototyping 
+
+What better way to document your evolving decisions on data structures and code-bases than with the type system?
+- New, evolving code most likely to make inconsistent assumptions
+
+easy to put in temporary stubs as necessary, such as
+ _ => raise Unimplemented
+
+Claim 7a: Dynamic better for evolution
+
+Can change code to be more permissive without affecting old callers
+- Example: Take an int or string instead of an int
+- All Ml callers must now use an constructor on arguments and pattern-match on results
+- Existing Racket callers can be oblivious
+
+Claim 7b: Static better for evolution
+
+When we change type of data or code, the type-checker gives us a todo list of everything that must change
+
+- Avoids introducing bugs
+- The more of your spec that is on your types, the more the type-checker lists what to change when your spec changes
+
+Example: Changin the return type of a function
+ 
+Example: Adding a new constructor to a datatype
+- Good reason not to use wildcard pattersn
+
+Counter-argument: The to-do list is mandatory, which makes
+evolution in pieces a pain: cann test part-way through
+
+Coda 
+
+- Static vs Dynamic typing is too coarse a question
+-- Better question: What should we force statically
+
+- Legitimate trade-offs you should now
+-- Rational discussion informed by facts!
+
+- Ideal: Flexible languages allowing best-of-both-worlds?
+-- Would programmers use such flexibility well? who decides?
