@@ -192,3 +192,70 @@ Suppose a type system were unsound. What could the PL do?
 
 - Worse: Allow not just X, but anything to happen if "Programmer goes something wrong"
   -- Will discuss C and C++ next
+
+Why weak typing
+
+- Weak typing: There exists programs that, by definitoin, must pass static checking but then when run can "set the computer on fire"?
+	- Dynamic checking is optional and in practice not done
+	- Why might anything happen?
+
+- Ease of language implementation: Checks left to the programmer
+- Performance: Dynamic Checks take time
+- Lower level: Compiler does not insert information like array sizes, so it cannot do the check
+
+Weak typing is a poor name: Really about doing neither static nor dynamic checks
+- A big problem is array bounds, which most PLs check dynamically 
+
+What weak typing has caused
+
+- Old now-much-rarer saying "strong types for weak minds"
+-- Idea was humans will always be smarter than type system
+   so need to let them say "trust me"
+- Reality: humans are really bad at avoiding bugs
+-- We need all the help we can get
+-- And type system have gotten much more expressive
+
+- 1 bug in a 30-million line operating system written in C can make an entire computer vulnerable
+
+Example: Racket
+
+- Racket is not weakly typed
+-- It just checks most things dynamically
+-- Dynamic checking is the definition - If the implementation can analyze teh coee to ensure some checks are not needsedd, then it cna optimize away
+
+- Not having ML or Java's rules can be convenient
+-- Cons cell can build anything
+-- Anything except false is true
+
+This is nothing like the "catch-fire semantics" of weak typing
+
+Question 
+Which of the following is true?
+
+Every dynamically typed language is weakly typed.
+
+Every weakly typed language is dynamically typed.
+
+A weakly typed language might allow programs that crash but it is not allowed to let programs corrupt data on the computer's disk
+
+Weak typing really means a type system that allows programs for which a correct language implemenation is allowed to do anything, even something totally unrelated to the code in the program
+
+the 4th one is correct
+
+weak typing means the implementation is allowed to do anything for some programs that type-check -- it can run illegal programs and cause anything to happen.
+
+Another misconception
+
+What operations are primitive defined and when an error?
+
+- Example: is "foo" + "bar" allowed?
+- Example: is "foo" + 3 allowed?
+- Example: is arr[10] allowed if arr hs only 5 elements?
+- Example: Can you call a function with too few or too many arguments?
+
+This is not static vs dynamic checking
+- It is what is the run-time semantics of the primitive
+- It is related because it also involves trade-offs between catching bugs sooner versus maybe being more convenient 
+- More like changing evalution rules of language
+
+Racket generally less lenient on these things e.g Ruby
