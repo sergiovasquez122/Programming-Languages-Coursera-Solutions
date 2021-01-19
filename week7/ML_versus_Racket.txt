@@ -1,0 +1,194 @@
+-Racket and ML have much in common
+
+-Key differences
+--Syntax
+--Pattern-matching vs. structu-test and accessor-functions
+
+-Biggest difference: ML's type system and Racket's lack thereof
+
+Questions to think about?
+-What is type-checking? Static typing? Dynamic typing? Etc.
+-Why is type-checking approximate?
+-What are the advantage and disadvantages of type-checking?
+
+ML from a Racket perspective 
+
+-Syntax, etc, aside, ML is like a well-defined subset of Racket
+-Many of the programs it disallows have bugs
+(define (g x) (+ x x)) ; ok
+(define (f y) (+ y (car y)))
+(define (h z) (g (cons z 2)))
+
+-In fact, in what ML allows, I never need primitives like number?
+
+-But other programs it disallows I may actually want to write
+
+(define (f x) (if (> x 0) true (list 1 2)))
+(define xs (list 1 true "hi"))
+(define y (f car xs))
+
+Racket from an ML Perspective 
+
+One way to describe Racket is that it has one big datatype
+- All values have this type
+datatype theType = Int of int 
+		   | String of string
+                   | Pair of theType * theType
+                   | Fun of theType -> theType
+
+-Constructors are applied implicityly 
+--42 is really like Int 42
+
+-Primitives implicitly check tags and extract data, raising errors for wrong constructors
+
+-fun car v = case v of Pair(a, b) => a | _ => raise _
+-fun pair? v = case v of Pair _ => true | _ => false
+
+-Built-in constructors for "theType": numbers, strings, booleans, pairs, symbols, procedures, etc
+
+-Each struct-definition creates a new constructor, dynamically adding to "theType"
+
+What is Static Checking?
+
+-Static checking is anything done to reject a program after it (successfully) parses but before it runs
+-Part of PL's definition: what static checking is performed
+--A "helpful tool" could do more checking
+
+-Common way to define a PL's static checking is via a type system
+--Approach is to give each variable, expression, etc.
+--Purposes inclucde preventing misuse of primitives enforcing abstraction, and avoiding dynamic checking
+---Dynamic means at run-time
+
+-Dynamically-typed languages do (almost) no static-checking
+--Line is not absolute
+
+In ML, type-checking ensures a program (when run) will have:
+
+- A primitive operation used on a value of the wrong type
+-- Arithmetic on a non-number
+-- e1 e2 where e1 does not evaluate to a function
+-- A non-boolean between if and then
+
+- A variable not defined in the environment
+- A pattern-match with a redundant pattern
+- Code outside a module call a function not in the module's signature
+
+Question
+Suppose we modify an ML compiler to remove the check for redundant pattern. Which of the following is true?
+
+1. This is okay because we still the same programming language
+
+2. We are now implementing a slightly different language becase a different set of programs is accepted by static checking.
+
+3. Our type system is now pointless because it would be possible to pass functions expecting strings
+
+4. Pattern matching is no longer a useful feature
+
+2. is the correct answer. 
+
+in ML, type-checking does not prevent any of these errors
+- Instead, detected at run-time
+
+- Calling functions such that exceptions occurs, e.g hd []
+- An array-bounds error
+- Division-by-zero
+
+In general, no type system prevents logic / algoritmic errors
+- Reversing the branches of a conditional 
+- Calling f instead of g
+(Without a program specification, type-checker can't "read minds")
+
+Purpose of a type system is to prevent certain from occurring at run-time
+
+Language design includes deciding what is checked and how
+
+Static / dynamic checking are two points on a continuum
+
+Soundness and Completeness
+
+What does it mean for a type system to be correct
+
+Suppose a type system to prevent X for some X
+
+- A type system is sound if it never accepts a program that, when run with some input, does X
+ 
+-- No false negatives 
+
+- A type system is complete if it never rejects a program that, no matter what input it is run with, will not do X
+
+-- No false positives
+
+The goal is usually for a PL type system to be sound but not complete
+
+- "Fancy features" like generics aimed at "fewer false positives"
+
+Notice soundness/completenes is with respect to X
+
+Question 
+
+Suppose we have a language with arrays and a very strange-and-not-useful type system that (1) requires all arrays to have at least one element and (2) allows accessing only the first element of an array. With respecting to array-bound violations this system is:
+
+Sound but not complete
+Complete but not sound
+Sound and complete
+Neither sound nor complete
+
+It is sound but not complete
+
+Incompleteness
+
+no examples of false negatives in ML
+
+a few functions ML rejects even though they do not divide by a string
+
+examples of false positives in ML
+
+fun f1 x = 4 div "hi" (* but f1 never called *)
+
+fun f2 x = if true then 0 else 4 div "hi"
+
+fun f3 x = if x then 0 else 4 div "hi"
+
+fun f4 x = if x <= abs x then 0 else 4 div "hi"
+
+fun f5 x = 4 div x
+
+val y = f5 (if true then 1 else "hi")
+
+Why incompletness
+
+- Almost anything you might like to check statically is undecidable
+-- Any static checker cannot do all of: (1) always terminate (2) be sound (3) be complete
+-- This is a mathematical theorem
+
+- Examples
+-- Will this function terminate on some input?
+-- Will this function ever use a variable not in the environment
+-- Will function trea a string as a function?
+-- Will this function divide by zero?
+
+- Undecidability is an essential concept and the core of computing
+- The inherent approximation of static checking is probably its most important ramification
+
+Question
+
+Why will there never be a popular programming language with a sound and complete type system for preventing calling a function with the wrong number of arguments?
+
+Because too few programmers want thsi property checked statically
+
+Because checking this property would make compiling program takes too long
+
+Because completeness is not a useful property for this sort of type system
+
+Because it is impossible if we assume the type-checker must always terminate.
+
+What about unsoundness
+
+Suppose a type system were unsound. What could the PL do?
+
+- Fix it with an updated language definition?
+- Insert dynamic checks as needed to prevent X from happening?
+- Just allow X to happen even if "tried to stop it"?
+
+- Worse: Allow not just X, but anything to happen if "Programmer goes something wrong"
+  -- Will discuss C and C++ next
