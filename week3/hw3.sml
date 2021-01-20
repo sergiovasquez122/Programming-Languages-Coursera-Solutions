@@ -12,7 +12,7 @@ val longest_string3 = longest_string_helper (fn(x, y) => x > y)
 
 val longest_string4 = longest_string_helper (fn(x, y) => x >= y)
 
-val longest_capitalized  = longest_string2 o only_capitals
+val longest_capitalized  = longest_string3 o only_capitals
 
 val rev_string = implode o rev o explode
 
@@ -43,13 +43,13 @@ datatype pattern = Wildcard
                  | Variable of string
                  | UnitP
                  | ConstP of int
-                 | ConstructorP of string * pattern
                  | TupleP of pattern list
+                 | ConstructorP of string * pattern
 
 datatype valu = Const of int
               | Unit
-              | Constructor of string * valu
               | Tuple of valu list
+              | Constructor of string * valu
 
 fun g f1 f2 p =
 let 
@@ -58,8 +58,8 @@ let
      case p of
      Wildcard  => f1()  
    | Variable x => f2 x
-   | ConstructorP(_, p) => r p
    | TupleP ps => List.foldl (fn(p, i) => (r p) + i) 0 ps
+   | ConstructorP(_, p) => r p
    | _ => 0
 end
 
@@ -67,7 +67,7 @@ fun count_wildcards p = g (fn() => 1) (fn(x) => 0) p
 
 fun count_wild_and_variable_lengths p = g (fn() => 1) (fn(x) => String.size x) p
 
-fun count_a_var (s, p) = g (fn() => 0) (fn(x) => if x = s then 1 else 0) p
+fun count_some_var(s, p) = g (fn() => 0) (fn(x) => if x = s then 1 else 0) p
 
 fun check_pat p = 
 let fun no_repeats xs = 
