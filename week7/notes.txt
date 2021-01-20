@@ -134,7 +134,6 @@ Sound and complete
 Neither sound nor complete
 
 It is sound but not complete
-
 Incompleteness
 
 no examples of false negatives in ML
