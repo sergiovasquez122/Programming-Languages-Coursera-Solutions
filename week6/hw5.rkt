@@ -95,11 +95,27 @@
                (error "MUPL addition applied to non-number")))]
 
         [(int? e) e]
+        [(fun? e) (closure env e)] 
         [(closure? e) e]
+        [(fst? e)  (let ([v (eval-exp (fst-e e))])
+                    (if (apair? v)
+                        (apair-e1 v)
+                        (error "MUPL fst applied to non-number")))]
+        [(snd? e) (let ([v (eval-exp (snd-e e))])
+                    (if (apair? v)
+                        (apair-e2 v)
+                        (error "MUPL snd applied to non-number")))]
         [(isaunit? e) (let ([v (eval-exp (isaunit-e e))])
                         (if (aunit? v)
                             (int 1)
                             (int 0)))]
+        [(ifgreater? e) (let ([v1 (eval-exp (ifgreater-e1 e))]
+                              [v2 (eval-exp (ifgreater-e2 e))])
+                          (if (and (int? v1) (int? v2))
+                              (if (> (int-num v1) (int-num v2))
+                                  (eval-exp (ifgreater-e3 e))
+                                  (eval-exp (ifgreater-e4 e)))
+                              (error "MUPL ifgreater applied to non-number")))]
         [(apair? e) (let ([v1 (eval-exp (apair-e1 e))]
                              [v2 (eval-exp (apair-e2 e))])
                          (apair v1 v2))]
