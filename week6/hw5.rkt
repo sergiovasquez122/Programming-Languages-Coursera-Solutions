@@ -95,7 +95,10 @@
                (error "MUPL addition applied to non-number")))]
 
         [(int? e) e]
-        [(fun? e) (closure env e)] 
+        [(fun? e) (closure env e)]
+        [(mlet? e) (letrec ([v (eval-exp (mlet-e e))]
+                         [new-env (cons ((mlet-var e) v) env)])
+                     (eval-under-env (mlet-body e) new-env))]
         [(closure? e) e]
         [(fst? e)  (let ([v (eval-exp (fst-e e))])
                     (if (apair? v)
@@ -119,7 +122,7 @@
         [(apair? e) (let ([v1 (eval-exp (apair-e1 e))]
                              [v2 (eval-exp (apair-e2 e))])
                          (apair v1 v2))]
-        [(aunit? e) e] 
+        [(aunit? e) e]
         [#t (error (format "bad MUPL expression: ~v" e))]))
 
 
