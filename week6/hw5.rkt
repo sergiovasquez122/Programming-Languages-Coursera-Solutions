@@ -96,31 +96,31 @@
 
         [(int? e) e]
         [(fun? e) (closure env e)]
-        [(mlet? e) (let* ([v (eval-exp (mlet-e e))]
+        [(mlet? e) (let* ([v (eval-under-env (mlet-e e) env)]
                          [new-env (cons (cons (mlet-var e) v) env)])
                      (eval-under-env (mlet-body e) new-env))]
         [(closure? e) e]
-        [(fst? e)  (let ([v (eval-exp (fst-e e))])
+        [(fst? e)  (let ([v (eval-under-env (fst-e e) env)])
                     (if (apair? v)
                         (apair-e1 v)
                         (error "MUPL fst applied to non-number")))]
-        [(snd? e) (let ([v (eval-exp (snd-e e))])
+        [(snd? e) (let ([v (eval-under-env (snd-e e) env)])
                     (if (apair? v)
                         (apair-e2 v)
                         (error "MUPL snd applied to non-number")))]
-        [(isaunit? e) (let ([v (eval-exp (isaunit-e e))])
+        [(isaunit? e) (let ([v (eval-under-env (isaunit-e e) env)])
                         (if (aunit? v)
                             (int 1)
                             (int 0)))]
-        [(ifgreater? e) (let ([v1 (eval-exp (ifgreater-e1 e))]
-                              [v2 (eval-exp (ifgreater-e2 e))])
+        [(ifgreater? e) (let ([v1 (eval-under-env (ifgreater-e1 e) env)]
+                              [v2 (eval-under-env (ifgreater-e2 e) env)])
                           (if (and (int? v1) (int? v2))
                               (if (> (int-num v1) (int-num v2))
-                                  (eval-exp (ifgreater-e3 e))
-                                  (eval-exp (ifgreater-e4 e)))
+                                  (eval-under-env (ifgreater-e3 e) env)
+                                  (eval-under-env (ifgreater-e4 e) env))
                               (error "MUPL ifgreater applied to non-number")))]
-        [(apair? e) (let ([v1 (eval-exp (apair-e1 e))]
-                             [v2 (eval-exp (apair-e2 e))])
+        [(apair? e) (let ([v1 (eval-under-env (apair-e1 e) env)]
+                             [v2 (eval-under-env (apair-e2 e) env)])
                          (apair v1 v2))]
         [(aunit? e) e]
         [#t (error (format "bad MUPL expression: ~v" e))]))
@@ -136,10 +136,10 @@
 ;; Problem 3
 (define (ifaunit e1 e2 e3) (ifgreater (isaunit e1) (int 0) e2 e3))
 
-(define (mlet* xs e)
+(define (mlet* xs e2)
   (if (null? xs)
-      e
-      (mlet (car (car xs)) (cdr (car xs)) (mlet* (cdr xs) e))))
+      e2
+      (mlet (car (car xs)) (cdr (car xs)) (mlet* (cdr xs) e2))))
 
 (define (ifeq e1 e2 e3 e4) (mlet* (list (cons "_x" e1) (cons "_y" e2)) (ifgreater (var "_x") (var "_y") e4 (ifgreater (var "_y") (var "_x") e4 e3))))
 ;; Problem 4
