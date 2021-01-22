@@ -95,6 +95,14 @@
                (error "MUPL addition applied to non-number")))]
 
         [(int? e) e]
+        [(call? e) (let* ([v1 (eval-under-env (call-funexp e) env)]
+                          [v2 (eval-under-env (call-actual e) env)]
+                          [closure_fun (closure-fun v1)]
+                          [closure_env (closure-env v1)]
+                          [map_fun_to_closure (cons (fun-nameopt closure_fun) v1)]
+                          [map_arg_to_v2 (cons (fun-formal closure_fun) v2)]
+                          [closure_body_eval (eval-under-env (fun-body closure_fun) (cons map_fun_to_closure (cons map_arg_to_v2 closure_env)))])
+                     closure_body_eval)]
         [(fun? e) (closure env e)]
         [(mlet? e) (let* ([v (eval-under-env (mlet-e e) env)]
                          [new-env (cons (cons (mlet-var e) v) env)])
@@ -145,15 +153,21 @@
 ;; Problem 4
 
 
-(define mupl-map "CHANGE")
-
+(define mupl-map
+  (fun #f "f"
+       (fun "g" "xs"
+            (ifaunit (var "xs")
+                     (aunit)
+                     (apair (call (var "f") (fst (var "xs")))
+                            (call (var "g") (snd (var "xs"))))))))
 
 
 (define mupl-mapAddN 
 
   (mlet "map" mupl-map
-
-        "CHANGE (notice map is now in MUPL scope)"))
+        (fun #f "i"
+             (fun "f" "xs"
+                  (call (call (var "map") (fun #f "x" (add (var "x") (var "i")))) (var "xs"))))))
 
 
 
