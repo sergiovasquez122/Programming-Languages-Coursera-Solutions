@@ -17,9 +17,14 @@ class MyPiece < Piece
   def self.next_piece (board)
     MyPiece.new(All_Pieces.sample, board)
   end
+
+  def self.cheat_piece(board)
+    MyPiece.new([[[0, 0]]], board)
+  end
 end
 
 class MyBoard < Board
+  attr_writer :cheat
   # your enhancements here
   def initialize (game)
     @grid = Array.new(num_rows) {Array.new(num_columns)}
@@ -27,6 +32,7 @@ class MyBoard < Board
     @score = 0
     @game = game
     @delay = 500
+    @cheat = false
   end
 
   def rotate_180
@@ -45,8 +51,14 @@ class MyBoard < Board
   end
 
   def next_piece
+    if @cheat == true
+    @current_block = MyPiece.cheat_piece(self)
+    @cheat = false
+    @current_pos = nil
+    else
     @current_block = MyPiece.next_piece(self)
     @current_pos = nil
+    end
   end
 
   def store_current
@@ -62,6 +74,12 @@ class MyBoard < Board
     @delay = [@delay - 2, 80].max
   end
 
+  def try_to_cheat
+    if @cheat == false and @score >= 100
+      @score -= 100
+      @cheat = true
+    end
+  end
 end
 
 class MyTetris < Tetris
@@ -74,8 +92,10 @@ class MyTetris < Tetris
     @board.draw
   end
 
+
   def key_bindings  
     @root.bind('n', proc {self.new_game}) 
+    @root.bind('c', proc {@board.try_to_cheat})
 
     @root.bind('p', proc {self.pause}) 
 
