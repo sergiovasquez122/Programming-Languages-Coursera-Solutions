@@ -10,7 +10,8 @@ class MyPiece < Piece
                rotations([[0, 0], [1, 0], [0, -1], [-1, -1]]), 
                rotations([[0, 0], [1, 0], [2, 0], [0, 1], [1, 1]]), 
                [[[0, 0], [-1, 0], [1, 0], [2, 0, [3, 0]]],
-               [[0, 0], [0, -1], [0, 1], [0, 2], [0, 3]]]]
+               [[0, 0], [0, -1], [0, 1], [0, 2], [0, 3]]],
+               rotations([[0, 0], [0, 1], [1, 0]]) ]
 
   # your enhancements here
   def self.next_piece (board)
@@ -46,6 +47,19 @@ class MyBoard < Board
   def next_piece
     @current_block = MyPiece.next_piece(self)
     @current_pos = nil
+  end
+
+  def store_current
+    locations = @current_block.current_rotation
+    displacement = @current_block.position
+    size = locations.size
+    (0..(size - 1)).each{|index| 
+      current = locations[index];
+      @grid[current[1]+displacement[1]][current[0]+displacement[0]] = 
+      @current_pos[index]
+    }
+    remove_filled
+    @delay = [@delay - 2, 80].max
   end
 
 end
