@@ -7,3 +7,17 @@
 Objects 
 -- easy to add a new variant
 -- adding a new operation requires modifying old classes, but Java type checker gives a to-do list if original code avoided default methods
+
+-Functgions allow new operations and objects allow new variations without modyifying existing code even if they didn't plan for it
+-- Natural result of the decomposition
+
+Making software extensible is valuable and hard
+- If you know you want new operations, use FP
+- If you know you want new variants, use OOP
+- If both? Try languages like Scala; It's a hard problem
+- Reality: The future is often hard to predict!
+
+Extensibility is a double-edged sword
+- Code more reusuable without being changed later
+- But makes original code more difficult to reason about locally or change later
+- Often language mechanisms to make code less extensible 
