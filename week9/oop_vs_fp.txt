@@ -1,0 +1,37 @@
+In functional (and procedural programming), break programs
+down into function that perform some operation
+
+In object-oriented programming, break programs down into classes that give behavior to some kind of data
+
+beginning of this unit:
+- These two forms of decompositions are so exactly opposite that they are two ways of looking at the same "matrix"
+- Which form is "better" is somewhat personal taste, but also depends on how you expect to change/extend software
+- For some operations over two arguments, functions and pattern-matching are straightforward, but with OOP we can do it with double dispatch
+
+Well-known and compelling example of a common pattern
+-expression for a small language
+-different variants of expressions
+-different operations to perform eval
+
+leads to a matrix of variants and operations
+- implementation will involve deciding what will happen for each entry in the grid regardless of the PL
+
+Standard approach in ML
+-Define a datatype with one constructor for each variant
+-Fill out the grid via one function per column
+-Each function has one branc for each column entry
+
+Standard approach in OOP
+-Define a class, with one abstract method for each operation 
+-(No need to indicate abstract methods if dynamically typed)
+-Define a subclass for every variant
+-So fill out the grid via one class per row with one method implementation for each grid position
+- Can use a method in the super class if there is a default for multiple entries in a column
+
+FP and OOP often doing the same thing in exact opposite way
+- Organize program by rows or by columns
+
+Which is more natural may depend on what you are doing
+
+Code layout is important, but there is perfect way since software has many dimensions of structure
+- tools, IDES, can helpl with muliple views
