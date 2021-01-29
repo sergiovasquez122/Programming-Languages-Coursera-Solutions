@@ -50,4 +50,34 @@ class Add < Exp
   def hasZero
     e1.hasZero ||  e2.hasZero
   end
+  def noNegConstants
+    if i < 0
+      Negate.new(Int.new(-1))
+    end
+    self
+  end
+end
+
+class Mult < Exp
+  attr_reader :e1, :e2
+  def initialize(e1, e2)
+    @e1 = e1
+    @e2 = e2
+  end
+
+  def eval
+    Int.new(e1.eval.i * e2.eval.i)
+  end
+
+  def toString
+    "(" + e1.toString + " * " + e2.toString + ")"
+  end
+
+  def hasZero
+    e1.hasZero || e2.hasZero
+  end
+
+  def noNegConstants
+    Mult.new(e1.noNegConstants, e2.noNegConstants)
+  end
 end
