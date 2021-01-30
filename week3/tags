@@ -1,25 +1,113 @@
 !_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
 'a	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^datatype 'a tree = leaf | node of {value : 'a, left : 'a tree, right : 'a tree}$/;"	t	language:SML
+addition	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun addition(n, x) = n_times(increment, n, x)$/;"	f	language:SML
+all_answers	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun all_answers f xs = $/;"	f	language:SML
 app_all	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun app_all f g x = foldr (fn (x, y) => x @ y) [] (map f (g x))$/;"	f	language:SML
+area	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun area s = $/;"	f	language:SML
+a_list	/home/sergio/Programming-Languages-Coursera-Solutions/week3/first_class_functions.sml	/^val a_list = [double, incr]$/;"	v	language:SML
+a_tuple	/home/sergio/Programming-Languages-Coursera-Solutions/week3/first_class_functions.sml	/^val a_tuple = (double, incr, double (incr 7))$/;"	v	language:SML
+cart	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^type cart = real * real$/;"	t	language:SML
+check_pat	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun check_pat p = $/;"	f	language:SML
 compose_opt	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun compose_opt f g x = $/;"	f	language:SML
+construct_squares	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun construct_squares xs = map (fn x => Square((Real.fromInt x, Real.fromInt x), Real.fromInt (abs x)) ) xs$/;"	f	language:SML
+contains	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun contains x xs = exists (fn k => k = x) xs$/;"	f	language:SML
+count_some_var	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun count_some_var(s, p) = g (fn() => 0) (fn(x) => if x = s then 1 else 0) p$/;"	f	language:SML
+count_wildcards	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun count_wildcards p = g (fn() => 1) (fn(x) => 0) p$/;"	f	language:SML
+count_wild_and_variable_lengths	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun count_wild_and_variable_lengths p = g (fn() => 1) (fn(x) => String.size x) p$/;"	f	language:SML
+double	/home/sergio/Programming-Languages-Coursera-Solutions/week3/first_class_functions.sml	/^fun double x = 2 * x$/;"	f	language:SML
+double	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun double x = x + x$/;"	f	language:SML
+double_n_times	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun double_n_times(n, x) = n_times(double, n, x)$/;"	f	language:SML
+double_n_times_lame	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun double_n_times_lame(n, x) = $/;"	f	language:SML
+double_or_triple	/home/sergio/Programming-Languages-Coursera-Solutions/week3/first_class_functions.sml	/^fun double_or_triple x =$/;"	f	language:SML
 do_until	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun do_until f p x = $/;"	f	language:SML
+eighteen	/home/sergio/Programming-Languages-Coursera-Solutions/week3/first_class_functions.sml	/^val eighteen = (#1 a_tuple) 9;$/;"	v	language:SML
+eval	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun eval e = $/;"	f	language:SML
+example1	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^val example1 = n_times(double, 10, 5)$/;"	v	language:SML
+example2	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^val example2 = n_times(increment, 10, 5)$/;"	v	language:SML
+example3	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^val example3 = n_times(tl, 2, [4, 8, 12, 16])$/;"	v	language:SML
+exists	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^val exists = List.exists$/;"	v	language:SML
+exp	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^datatype exp = Constant of int$/;"	t	language:SML
 factorial	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun factorial n = $/;"	f	language:SML
 factorial	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun factorial n = $/;"	f	language:SML
+filter	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^val filter = List.filter$/;"	v	language:SML
+filter	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^val filter = List.filter$/;"	v	language:SML
 filter_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun filter_over_tree f root = $/;"	f	language:SML
 filter_with_foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun filter_with_foldr f xs = foldr(fn(x, xs) => if f x then x::xs else xs) [] xs$/;"	f	language:SML
+first	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^  val first = first_answer match zipped_list$/;"	v	language:SML
+first_answer	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun first_answer f xs = $/;"	f	language:SML
+first_match	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun first_match v ps = $/;"	f	language:SML
 fixed_point	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun fixed_point f x = $/;"	f	language:SML
 foldl	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun foldl f acc xs = $/;"	f	language:SML
+foldl	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^val foldl = List.foldl$/;"	v	language:SML
 foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun foldr f acc xs =$/;"	f	language:SML
 fold_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun fold_over_tree f acc root = $/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun g f1 f2 p =$/;"	f	language:SML
+helper	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^  fun helper(xs, acc) =$/;"	f	language:SML
+incr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/first_class_functions.sml	/^fun incr x  = x + 1$/;"	f	language:SML
+increment	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun increment x = x + 1$/;"	f	language:SML
+increment_n_times_lame	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun increment_n_times_lame(n, x) = $/;"	f	language:SML
+inList	/home/sergio/Programming-Languages-Coursera-Solutions/week3/first_class_functions.sml	/^fun inList x xs = List.exists (fn y => y = x) xs$/;"	f	language:SML
+in_quadrant_one	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun in_quadrant_one s = $/;"	f	language:SML
 lhs	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^                        val (lhs, rhs) = partition f xs'$/;"	v	language:SML
+longest_capitalized	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^val longest_capitalized  = longest_string3 o only_capitals$/;"	v	language:SML
+longest_string1	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun longest_string1 sl = foldl (fn(x, y) => if String.size x > String.size y$/;"	f	language:SML
+longest_string2	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun longest_string2 sl = foldl(fn(x, y) => if String.size x >= String.size y then x else y) "" sl$/;"	f	language:SML
+longest_string3	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^val longest_string3 = longest_string_helper (fn(x, y) => x > y)$/;"	v	language:SML
+longest_string4	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^val longest_string4 = longest_string_helper (fn(x, y) => x >= y)$/;"	v	language:SML
+longest_string_helper	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun longest_string_helper f sl = foldl (fn(x, y) => let val x_size =$/;"	f	language:SML
 map	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map f xs = $/;"	f	language:SML
+map	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^val map = List.map$/;"	v	language:SML
 map2	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map2 f (x, y) = (f x, f y)$/;"	f	language:SML
 map_over_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map_over_tree f root = $/;"	f	language:SML
 map_with_foldr	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun map_with_foldr f xs = foldr (fn(x, xs) => (f x)::xs) [] xs$/;"	f	language:SML
+match	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun match(v, p) = $/;"	f	language:SML
+matches	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^                                                   val matches = match(v, p) $/;"	v	language:SML
+matches	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^                                    val matches = all_answers match vs_ps$/;"	v	language:SML
+NoAnswer	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^exception NoAnswer$/;"	e	language:SML
+no_repeats	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^let fun no_repeats xs = $/;"	f	language:SML
+nth_tail_lame	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun nth_tail_lame(n, xs) = $/;"	f	language:SML
+n_times	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun n_times(f, n, x) = $/;"	f	language:SML
+only_capitals	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun only_capitals sl = List.filter (fn x => Char.isUpper (String.sub(x, 0))) sl$/;"	f	language:SML
 partition	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun partition f xs = $/;"	f	language:SML
+pattern	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^datatype pattern = Wildcard$/;"	t	language:SML
+quadrant_one_only	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun quadrant_one_only xs = filter in_quadrant_one xs$/;"	f	language:SML
+r	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^  val r = g f1 f2 $/;"	v	language:SML
+r	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^  val r = s f1 f2 $/;"	v	language:SML
+remove_all	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun remove_all x xs = filter (fn y => y <> x) xs$/;"	f	language:SML
+rev_string	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^val rev_string = implode o rev o explode$/;"	v	language:SML
+s	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun s f1 f2 p =$/;"	f	language:SML
+shape	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^datatype shape = $/;"	t	language:SML
+size	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun size xs = foldl (fn(_, y) => y + 1) 0 xs$/;"	f	language:SML
+swap_pair	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun swap_pair(a, b) = (b, a)$/;"	f	language:SML
+swap_pairs_list	/home/sergio/Programming-Languages-Coursera-Solutions/week3/ucr_practice_problems.sml	/^fun swap_pairs_list xs = map swap_pair xs$/;"	f	language:SML
+tail_n_times	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun tail_n_times(n, x) = n_times(tl, n, x)$/;"	f	language:SML
+test1	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test1 = only_capitals ["A","B","C"] = ["A","B","C"]$/;"	v	language:SML
+test1	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test1 = true : bool$/;"	v	language:SML
+test10	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test10 = check_pat (Variable("x")) = true$/;"	v	language:SML
+test11	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test11 = match (Const(1), UnitP) = NONE$/;"	v	language:SML
+test12	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test12 = first_match Unit [UnitP] = SOME []$/;"	v	language:SML
+test2	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test2 = longest_string1 ["A","bc","C"] = "bc"$/;"	v	language:SML
+test3	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test3 = longest_string2 ["A","bc","C"] = "bc"$/;"	v	language:SML
+test4a	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test4a = longest_string3 ["A","bc","C"] = "bc"$/;"	v	language:SML
+test4b	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test4b = longest_string4 ["A","B","C"] = "C"$/;"	v	language:SML
+test5	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test5 = longest_capitalized ["A","bc","C"] = "A"$/;"	v	language:SML
+test6	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test6 = rev_string "abc" = "cba"$/;"	v	language:SML
+test7	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test7 = first_answer (fn x => if x > 3 then SOME x else NONE) [1,2,3,4,5] =$/;"	v	language:SML
+test8	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test8 = all_answers (fn x => if x = 1 then SOME [x] else NONE) [2,3,4,5,6,7]$/;"	v	language:SML
+test9a	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test9a = count_wildcards Wildcard = 1$/;"	v	language:SML
+test9b	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test9b = count_wild_and_variable_lengths (Variable("a")) = 1$/;"	v	language:SML
+test9c	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3test.sml	/^val test9c = count_some_var ("x", Variable("x")) = 1$/;"	v	language:SML
+to_string_list	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun to_string_list p = s (fn() => []) (fn(x) => [x]) p$/;"	f	language:SML
+triple	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun triple(x) = 3 * x$/;"	f	language:SML
+triple_n_times	/home/sergio/Programming-Languages-Coursera-Solutions/week3/functions_as_arguments.sml	/^fun triple_n_times(n, x) = n_times(triple, n, x)$/;"	f	language:SML
 unfold	/home/sergio/Programming-Languages-Coursera-Solutions/week3/exercises.sml	/^fun unfold f seed  = $/;"	f	language:SML
+valu	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^datatype valu = Const of int$/;"	t	language:SML
+vs_ps	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^                                    val vs_ps = ListPair.zip(vs, ps)$/;"	v	language:SML
 w	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val w = ((!y) + (!z)) (* 85 *)$/;"	v	language:SML
 x	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val x = ref 42$/;"	v	language:SML
+x_size	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^fun longest_string_helper f sl = foldl (fn(x, y) => let val x_size =$/;"	v	language:SML
 y	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val y = ref 42$/;"	v	language:SML
+y_size	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^  String.size x val y_size = String.size y in if f(x_size, y_size) then x else y end) "" sl$/;"	v	language:SML
 z	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val z = x$/;"	v	language:SML
+zipped_list	/home/sergio/Programming-Languages-Coursera-Solutions/week3/hw3.sml	/^  val zipped_list = map (fn x => (v, x)) ps$/;"	v	language:SML
 _	/home/sergio/Programming-Languages-Coursera-Solutions/week3/references_ex.sml	/^val _ = x := 43$/;"	v	language:SML

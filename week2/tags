@@ -5,7 +5,7 @@ addAllOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.
 addOpt	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun addOpt(x, y) = $/;"	f	language:SML
 all	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all(xs) = $/;"	f	language:SML
 all'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all'(f, xs) = $/;"	f	language:SML
-all_except_option	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun all_except_option(xs, x) = $/;"	f	language:SML
+all_except_option	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun all_except_option(x, xs) = $/;"	f	language:SML
 all_products	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun all_products(xs) = $/;"	f	language:SML
 all_same_color	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun all_same_color(cs) = $/;"	f	language:SML
 alternate	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun alternate(xs) = $/;"	f	language:SML
@@ -155,6 +155,7 @@ suit	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^datat
 sum_cards	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2.sml	/^fun sum_cards(cs) = $/;"	f	language:SML
 sum_tree	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun sum_tree root =$/;"	f	language:SML
 take'	/home/sergio/Programming-Languages-Coursera-Solutions/week2/exercises.sml	/^fun take'(l, i) = $/;"	f	language:SML
+test1	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test1 = all_except_option ("string", ["string"]) = SOME []$/;"	v	language:SML
 test10	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test10 = score ([(Hearts, Num 2),(Clubs, Num 4)],10) = 4$/;"	v	language:SML
 test11	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test11 = officiate ([(Hearts, Num 2),(Clubs, Num 4)],[Draw], 15) = 6$/;"	v	language:SML
 test12	/home/sergio/Programming-Languages-Coursera-Solutions/week2/hw2test.sml	/^val test12 = officiate ([(Clubs,Ace),(Spades,Ace),(Clubs,Ace),(Spades,Ace)],$/;"	v	language:SML

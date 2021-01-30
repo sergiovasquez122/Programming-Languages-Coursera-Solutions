@@ -1,0 +1,14 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+cheat_piece	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def self.cheat_piece(board)$/;"	F	language:Ruby	class:MyPiece
+initialize	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def initialize (game)$/;"	f	language:Ruby	class:MyBoard
+key_bindings	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def key_bindings  $/;"	f	language:Ruby	class:MyTetris
+MyBoard	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^class MyBoard < Board$/;"	c	language:Ruby
+MyPiece	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^class MyPiece < Piece$/;"	c	language:Ruby
+MyTetris	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^class MyTetris < Tetris$/;"	c	language:Ruby
+next_piece	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def next_piece$/;"	f	language:Ruby	class:MyBoard
+next_piece	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def self.next_piece (board)$/;"	F	language:Ruby	class:MyPiece
+rotate_180	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def rotate_180$/;"	f	language:Ruby	class:MyBoard
+set_board	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def set_board$/;"	f	language:Ruby	class:MyBoard
+set_board	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def set_board$/;"	f	language:Ruby	class:MyTetris
+store_current	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def store_current$/;"	f	language:Ruby	class:MyBoard
+try_to_cheat	/home/sergio/Programming-Languages-Coursera-Solutions/week8/hw6assignment.rb	/^  def try_to_cheat$/;"	f	language:Ruby	class:MyBoard

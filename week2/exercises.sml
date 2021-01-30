@@ -46,6 +46,8 @@ fun greeting(s) =
 
 exception BadList
 
+(* a' list * int list -> a' list *)
+(* [1, 2, 3, 4] * [2, 0, 1, 1] -> [1, 1, 3, 4] *)
 fun repeat(xs, ys) = 
   case (xs, ys) of
        ([], []) => []
@@ -53,6 +55,7 @@ fun repeat(xs, ys) =
      | (x::xs', y::ys') => x::repeat(x::xs', (y-1)::ys')
      | _ => raise BadList
 
+(* int option * int option -> int option *)
 fun addOpt(x, y) = 
   case (x, y) of 
        (SOME x', SOME y') => SOME(x' + y')

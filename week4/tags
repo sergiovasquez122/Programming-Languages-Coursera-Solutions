@@ -1,0 +1,119 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+accum	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^    fun accum(n, acc) = $/;"	f	language:SML
+accum	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^    fun accum(n, acc) = $/;"	f	language:SML
+add	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  fun add(r1, r2) = $/;"	f	language:SML
+add	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val add : rational * rational -> rational$/;"	v	language:SML
+add	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val add : rational * rational -> rational$/;"	v	language:SML
+add	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val add : rational * rational -> rational$/;"	v	language:SML
+BadFrac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  exception BadFrac$/;"	e	language:SML
+BadFrac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  exception BadFrac$/;"	e	language:SML
+BadFrac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  exception BadFrac$/;"	e	language:SML
+BadFrac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  exception BadFrac$/;"	e	language:SML
+bad_max	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalence_vs_performance.sml	/^fun bad_max xs = $/;"	f	language:SML
+bad_sum	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^fun bad_sum xs = $/;"	f	language:SML
+compose	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^fun compose (f, g) = fn x => f (g x)$/;"	f	language:SML
+d	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^             val d = gcd(abs x, y) in$/;"	v	language:SML
+double	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^fun double x = x * 2$/;"	f	language:SML
+double	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^fun double x = x + x$/;"	f	language:SML
+double	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^fun double x = x + y$/;"	f	language:SML
+doubler	/home/sergio/Programming-Languages-Coursera-Solutions/week4/modules.sml	/^  fun doubler y = y * 2$/;"	f	language:SML
+doubler	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  fun doubler y = y + y$/;"	f	language:SML
+doubler	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  fun doubler y = y + y$/;"	f	language:SML
+doubler	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  val doubler : int -> int$/;"	v	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalent_functions.sml	/^fun f x = x + x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = $/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = $/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x + x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x + x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x + x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x + y + x $/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x + y + x (* evaluates to 2 * x + y *)$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x + y + x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x + y + x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x andalso g x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f x = x andalso g x$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f y = $/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f y = y + y + y (* shadows top level y and evaluates to 3 * y *)$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f z = z + y + z$/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^fun f x = $/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^fun f(x, y, z) = $/;"	f	language:SML
+f	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^fun f(y, z, w) = if y then z + x else 0$/;"	f	language:SML
+f'	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun f' x = $/;"	f	language:SML
+fact	/home/sergio/Programming-Languages-Coursera-Solutions/week4/modules.sml	/^  fun fact x = $/;"	f	language:SML
+fact	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  fun fact(n) = $/;"	f	language:SML
+fact	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  fun fact(n) = $/;"	f	language:SML
+fact	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  val fact : int -> int$/;"	v	language:SML
+fact	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  val fact : int -> int$/;"	v	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalent_functions.sml	/^fun g (f, x) = $/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalent_functions.sml	/^fun g x = y * x (* fun g x = 2 * x *)$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalent_functions.sml	/^fun g(f, x) = (f x) + (f x)$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun g x = not x$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun g y = f y$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun g y = y + y$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun g z = (f z) + z$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun g z = (f z) + z$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun g z = (z + y + z) + z$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^fun g z = (z + y + z) + z$/;"	f	language:SML
+g	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val g = f$/;"	v	language:SML
+gcd	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  fun gcd(x, y) = $/;"	f	language:SML
+good_max	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalence_vs_performance.sml	/^fun good_max xs = $/;"	f	language:SML
+half_pi	/home/sergio/Programming-Languages-Coursera-Solutions/week4/modules.sml	/^  val half_pi = Math.pi \/ 2.0$/;"	v	language:SML
+half_pi	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  val half_pi : real$/;"	v	language:SML
+half_pi	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  val half_pi : real$/;"	v	language:SML
+half_pi	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  val half_pi = Math.pi \/ 2.0;$/;"	v	language:SML
+half_pi	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^  val half_pi = Math.pi \/ 2.0;$/;"	v	language:SML
+length'	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^fun length' xs = $/;"	f	language:SML
+make_frac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  fun make_frac(x, y) = $/;"	f	language:SML
+make_frac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val make_frac : int * int -> rational$/;"	v	language:SML
+make_frac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val make_frac : int * int -> rational$/;"	v	language:SML
+make_frac	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val make_frac : int * int -> rational$/;"	v	language:SML
+match	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^fun match xs  = $/;"	f	language:SML
+MATHLIB	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^signature MATHLIB = $/;"	s	language:SML
+MATHLIB2	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^signature MATHLIB2 = $/;"	s	language:SML
+MyMathLib	/home/sergio/Programming-Languages-Coursera-Solutions/week4/modules.sml	/^structure MyMathLib = $/;"	r	language:SML
+MyMathLib	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^structure MyMathLib :> MATHLIB =$/;"	r	language:SML
+MyMathLib2	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^structure MyMathLib2 :> MATHLIB2 =$/;"	r	language:SML
+no_zeros_or_empty_strings_t1	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^fun no_zeros_or_empty_strings_t1 x = $/;"	f	language:SML
+no_zeros_or_empty_strings_t1	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^fun no_zeros_or_empty_strings_t1(f, x) =$/;"	f	language:SML
+no_zeros_o_empty_string_t2	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^fun no_zeros_o_empty_string_t2 x = $/;"	f	language:SML
+pi	/home/sergio/Programming-Languages-Coursera-Solutions/week4/modules.sml	/^val pi = MyMathLib.half_pi + MyMathLib.half_pi$/;"	v	language:SML
+rational	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  datatype rational = Whole of int | Frac of int * int$/;"	t	language:SML
+rational	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  datatype rational = Whole of int | Frac of int * int$/;"	t	language:SML
+rational	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  type rational$/;"	t	language:SML
+rational	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  type rational(* means the type exists, but clients do not know its definition *)$/;"	t	language:SML
+Rational1	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^structure Rational1 :> RATIONAL_B = $/;"	r	language:SML
+RATIONAL_A	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^signature RATIONAL_A = $/;"	s	language:SML
+RATIONAL_B	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^signature RATIONAL_B = $/;"	s	language:SML
+RATIONAL_C	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^signature RATIONAL_C = $/;"	s	language:SML
+reduce	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  fun reduce r =$/;"	f	language:SML
+sum	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^fun sum xs = $/;"	f	language:SML
+s_need_one	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^  fun s_need_one xs = $/;"	f	language:SML
+s_need_two	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^  and s_need_two xs = $/;"	f	language:SML
+t1	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^datatype t1 = Foo of int | Bar of t2 and t2 = Baz of string | Quux of t1$/;"	t	language:SML
+t2	/home/sergio/Programming-Languages-Coursera-Solutions/week4/mutual_recursion.sml	/^datatype t1 = Foo of int | Bar of t2 and t2 = Baz of string | Quux of t1$/;"	t	language:SML
+toString	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  fun toString r = $/;"	f	language:SML
+toString	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val toString : rational -> string$/;"	v	language:SML
+toString	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val toString : rational -> string$/;"	v	language:SML
+toString	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val toString : rational -> string$/;"	v	language:SML
+twenty_eight	/home/sergio/Programming-Languages-Coursera-Solutions/week4/modules.sml	/^val twenty_eight = MyMathLib.doubler 14$/;"	v	language:SML
+Whole	/home/sergio/Programming-Languages-Coursera-Solutions/week4/module_example.sml	/^  val Whole : int -> rational$/;"	v	language:SML
+x	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val x = 10 $/;"	v	language:SML
+x	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^val x = 42$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalence_vs_performance.sml	/^     | x::y::xs' => let val y = good_max xs'$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalent_functions.sml	/^val y = 2$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/equivalent_functions.sml	/^val y = 2$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/signatures.sml	/^val y = 2$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^let val y = 3 $/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^let val y = 3$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 14$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 30$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 7$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/standard_equivalence.sml	/^val y = 7$/;"	v	language:SML
+y	/home/sergio/Programming-Languages-Coursera-Solutions/week4/type_inference.sml	/^let val (y, z) = x in$/;"	v	language:SML

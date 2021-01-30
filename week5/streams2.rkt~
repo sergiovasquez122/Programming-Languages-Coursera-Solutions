@@ -1,0 +1,21 @@
+#lang racket
+(provide (all-defined-out))
+
+; the infinite sequence of ones
+(define ones (λ () (cons 1 ones)))
+; the natural numbers
+(define (f x)
+  (cons x (λ () (f (+ x 1)))))
+
+(define nats (λ() (f 1)))
+; power of two's
+(define power-of-twos
+  (letrec ([f (λ(x) (cons x (λ() (f (* x 2)))))])
+    (λ() (f 1))))
+; helper function
+(define (stream-maker fn arg)
+  (letrec ([f (λ(x) (cons x (λ() (f (fn x arg)))))])
+    (λ() (f 1))))
+
+(define nats2 (stream-maker + 1))
+(define power-of-two2 (stream-maker * 2))

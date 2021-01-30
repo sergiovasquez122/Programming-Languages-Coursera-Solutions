@@ -1,16 +1,11 @@
-(* 1. fun : (int * int * int) * (int * int * int) -> bool 
-* (#1 x) = day
-* (#2 x) = month
-* (#3 x) = year
-* *)
 fun is_older(d1 : int * int * int, d2 : int * int * int) = 
 let 
-  val lhs_day = #1 d1
+  val lhs_day = #3 d1
   val lhs_month = #2 d1
-  val lhs_year = #3 d1
-  val rhs_day = #1 d2
+  val lhs_year = #1 d1
+  val rhs_day = #3 d2
   val rhs_month = #2 d2
-  val rhs_year = #3 d2
+  val rhs_year = #1 d2
 in 
   if lhs_year = rhs_year andalso lhs_month = rhs_month andalso lhs_day = rhs_day 
   then false
@@ -73,9 +68,9 @@ fun get_nth(xs : string list, n : int) =
         * the form January 20, 2013 *)
 fun date_to_string(date : int * int * int) = 
 let 
-  val day = Int.toString(#1 date)
+  val day = Int.toString(#3 date)
   val month = Int.toString(#2 date)
-  val year = Int.toString(#3 date)
+  val year = Int.toString(#1 date)
 in
   month ^ " " ^ day ^ ", " ^ year
 end

@@ -8,7 +8,7 @@ dates_in_months	/home/sergio/Programming-Languages-Coursera-Solutions/week1/home
 dates_in_months_challenge	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun dates_in_months_challenge(dates : (int * int * int) list, months : int list)$/;"	f	language:SML
 date_to_string	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun date_to_string(date : int * int * int) = $/;"	f	language:SML
 day	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val day = #1 date$/;"	v	language:SML
-day	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val day = Int.toString(#1 date)$/;"	v	language:SML
+day	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val day = Int.toString(#3 date)$/;"	v	language:SML
 find_elem	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun find_elem(xs : int list, x : int) =$/;"	f	language:SML
 get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  fun get_nth(xs : int list, n : int) = $/;"	f	language:SML
 get_nth	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun get_nth(xs : string list, n : int) = $/;"	f	language:SML
@@ -18,9 +18,9 @@ helper	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml
 helper	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^let fun helper(xs : int list, aux : int list) = $/;"	f	language:SML
 is_leap_year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  fun is_leap_year(year : int) = $/;"	f	language:SML
 is_older	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun is_older(d1 : int * int * int, d2 : int * int * int) = $/;"	f	language:SML
-lhs_day	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val lhs_day = #1 d1$/;"	v	language:SML
+lhs_day	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val lhs_day = #3 d1$/;"	v	language:SML
 lhs_month	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val lhs_month = #2 d1$/;"	v	language:SML
-lhs_year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val lhs_year = #3 d1$/;"	v	language:SML
+lhs_year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val lhs_year = #1 d1$/;"	v	language:SML
 month	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^      val month = #2 curr_element $/;"	v	language:SML
 month	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val month = #2 date$/;"	v	language:SML
 month	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val month = Int.toString(#2 date)$/;"	v	language:SML
@@ -37,10 +37,10 @@ number_in_months_challenge	/home/sergio/Programming-Languages-Coursera-Solutions
 oldest	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun oldest(dates : (int * int * int) list) = $/;"	f	language:SML
 reasonable_date	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun reasonable_date(date : int * int * int) = $/;"	f	language:SML
 remove_duplicates	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun remove_duplicates(xs : int list) = $/;"	f	language:SML
-rhs_day	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val rhs_day = #1 d2$/;"	v	language:SML
+rhs_day	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val rhs_day = #3 d2$/;"	v	language:SML
 rhs_month	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val rhs_month = #2 d2$/;"	v	language:SML
-rhs_year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val rhs_year = #3 d2$/;"	v	language:SML
+rhs_year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val rhs_year = #1 d2$/;"	v	language:SML
 tl_ans	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^            val tl_ans = helper(tl dates)$/;"	v	language:SML
 what_month	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^fun what_month(day : int) = $/;"	f	language:SML
 year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val year = #3 date$/;"	v	language:SML
-year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val year = Int.toString(#3 date)$/;"	v	language:SML
+year	/home/sergio/Programming-Languages-Coursera-Solutions/week1/homework1.sml	/^  val year = Int.toString(#1 date)$/;"	v	language:SML

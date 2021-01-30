@@ -63,3 +63,14 @@
                               (set! idx (remainder (+ idx 1) n))
                               new-ans))))))])
     f))
+
+(define-syntax while-less
+  (syntax-rules (do)
+    [(while-less e1 do e2)
+     (let ([v1 e1]
+           [v2 e2])
+       (letrec ([loop (λ(it)
+                        (if (> it v1)
+                            false
+                            (begin it (loop it))))])
+         (loop v2)))]))
