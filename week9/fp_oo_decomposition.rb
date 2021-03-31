@@ -1,10 +1,10 @@
 class Exp
 end
 
-class value < Exp
+class Value < Exp
 end
 
-class Int < value
+class Int < Value
   attr_reader :i
   def initialize i
     @i = i
