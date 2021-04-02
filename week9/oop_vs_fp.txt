@@ -35,3 +35,22 @@ Which is more natural may depend on what you are doing
 
 Code layout is important, but there is perfect way since software has many dimensions of structure
 - tools, IDES, can helpl with muliple views
+
+The other way is possible
+
+- Functions allow new operations and objects allow new variants
+  without modifying existing code even if they didn't plan for it
+  - Natural result of the decomposition
+
+Thoughts on extensibility
+
+- Making software extensible is valuable and hard
+- If you know you want new operations, use FP
+- if you know you want new variants,  use OOp
+- if both? language like Scala try; it's a hard problem
+- reality: The future is often hard to predict!
+
+- Extensibility is a double-edged sword
+-- Code more resuable without being changed later
+-- But makes original code more difficult to reason about locally or change later
+-- Of tne langauges mechanism to make code less extensible

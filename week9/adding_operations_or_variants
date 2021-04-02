@@ -1,0 +1,11 @@
+- For implementing our grid so far, SML / Racket style usually by column and Ruby / Java style usually by row
+
+- But beyond just style, this decision affects what software extennsions need not change old code
+
+- Functions
+    - Easy to add a new operation
+    - Adding a new variant, but ML type-checker gives a to-do list if original code avoided wildcard patterns
+
+- In OOP adding new object is easy
+- Easy to add a new variant
+- adding a new operations requires modifying old classes
