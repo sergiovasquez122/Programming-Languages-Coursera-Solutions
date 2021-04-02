@@ -4,6 +4,7 @@ end
 class Value < Exp
 end
 
+# inside each class fill out the row
 class Int < Value
   attr_reader :i
   def initialize i
