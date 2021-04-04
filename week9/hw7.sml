@@ -20,7 +20,6 @@ datatype geom_exp =
 	 | Let of string * geom_exp * geom_exp (* let s = e1 in e2 *)
 	 | Var of string
    | Shift of real * real * geom_exp
-(* CHANGE add shifts for expressions of the form Shift(deltaX, deltaY, exp *)
 
 exception BadProgram of string
 exception Impossible of string
@@ -196,5 +195,15 @@ fun eval_prog (e,env) =
 	   | SOME (_,v) => v)
       | Let(s,e1,e2) => eval_prog (e2, ((s, eval_prog(e1,env)) :: env))
       | Intersect(e1,e2) => intersect(eval_prog(e1,env), eval_prog(e2, env))
-(* CHANGE: Add a case for Shift expressions *)
+      | Shift(deltaX, deltaY, e1) => let val result = eval_prog(e1, env)
+                                      in 
+                                        case result of 
+                                             (NoPoints) => NoPoints
+                                           | (Point(x, y)) => Point(x + deltaX, y + deltaY)
+                                           | (Line(m, b)) => Line(m, b + deltaY - m * deltaX)
+                                           | VerticalLine(x) => VerticalLine(x + deltaX)
+                                           | LineSegment(x1, y1, x2, y2) =>
+                                               LineSegment(x1 + deltaX, y1 + deltaY, x2 + deltaX, y2 + deltaY)
+                                           | _ => raise BadProgram("Subexpression not of five components")
+                                     end
 (* CHANGE: Add function preprocess_prog of type geom_exp -> geom_exp *)
