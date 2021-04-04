@@ -1,0 +1,23 @@
+- Multiple inheritance: Languages with multiple inheritance let one class extend multiple other classes.
+- It is the most powerful option of the bunch but leads to semantic problems that the other ideas avoid.
+- Java and Ruby do not have multiple Inheritance; C++ does.
+
+-- What ruby has
+- Mixins: pile of methods
+- Ruby has only one immediate superclass but as many Mixins as you want
+
+-- What Java/C# has
+-- Has only one immediate superclass but can implement any number of interfaces
+-- Interfaces are fundamentally about type-checking
+-- Would not be needed in a dynamic-typed OOP language like Ruby
+-- C++ does not have interfaces because inheriting a class with all 'abstract' methods accomplishes the same thing
+
+-- Mixins
+-- somewhere between multiple inheritance and interfaces
+-- provide actual code to classes that include them, but they are not classes themselves so you cannot create instances of thems
+
+-- Java/C# style Interfaces
+-- An interface is just a list of methods and each method's type and return type. A class type-checks only if it  actuallly provides all the methods of all the interfaces it claims to implement.
+-- An interface is closer to the idea of "duck typing" than just classes as types, but a class interface type only if thhte class definition explictly says it implements the interface.
+-- Implementing interfaces does not inherit code. It is purely related to type-checking in statically typed languages like Java and C#.
+-- It makes the type system in these languages more flexible. So Ruby does not need interfaces.
