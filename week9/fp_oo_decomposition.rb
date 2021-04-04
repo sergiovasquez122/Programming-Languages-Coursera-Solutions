@@ -62,6 +62,9 @@ class Add < Exp
   end
 end
 
+# adding new class is easy
+# we can add a new class without altering any existing code
+# adding new method requires we update all existing classes to have that method
 class Mult < Exp
   attr_reader :e1, :e2
   def initialize(e1, e2)

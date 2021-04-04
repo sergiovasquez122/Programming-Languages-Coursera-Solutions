@@ -60,3 +60,18 @@ fun noNegConstants e =
      | Negate e1 => Negate(noNegConstants e1)
      | Add(e1, e2) => Add(noNegConstants e1, noNegConstants e2)
      | Mult(e1, e2) => Mult(noNegConstants e1, noNegConstants e2)
+
+(* Binary Methods with Functional Decompostion *)
+(* add_values is defining all 9 entires in this 2-D grid for hwo to add values in our langauge *)
+fun add_values (v1, v2) =
+  case (v1, v2) of
+        (Int i, Int j) => Int (i + j)
+        | (Int i, String s) => String(Int.toString i ^ s)
+        | (Int i, Rational(j, k)) => Rational(i * k + j, k)
+        | (String s, Int i) => String(s ^ Int.toString i)
+        | (String s1, String s2) => String(s1 ^ s2)
+        | (String s, Rational(i, j) => String(s ^ Int.toString i ^ "/" ^ Int.toString j)
+        | (Rational _, Int _) => add_values(v2, v1) (* commutative: avoid duplication *)
+        | (Rational (i, j), String s) => String(Int.toString i ^ "/" ^ Int.toString j ^ s)
+        | (Rational(a, b), Rational(c, d)) => Rational(a * d + b * c, b * d)
+        | _ => raise BadResult "non-values passed to add_values"
