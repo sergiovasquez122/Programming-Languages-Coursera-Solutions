@@ -113,6 +113,7 @@ class NoPoints < GeometryValue
   def intersectWithSegmentAsLineResult seg
     self
   end
+
 end
 
 class Point < GeometryValue
@@ -138,6 +139,12 @@ class Point < GeometryValue
   def preprocess_prog
     self
   end
+
+  def intersect other
+    other.intersectPoint self
+  end
+
+
 end
 
 class Line < GeometryValue
@@ -160,6 +167,10 @@ class Line < GeometryValue
   def preprocess_prog
     self
   end
+
+  def intersect other
+    other.intersectLine self
+  end
 end
 
 class VerticalLine < GeometryValue
@@ -180,6 +191,10 @@ class VerticalLine < GeometryValue
 
   def shift(dx, dy)
     VerticalLine.new(x + dx)
+  end
+
+  def intersect other
+    other.intersectVerticalLine self
   end
 end
 
@@ -216,6 +231,10 @@ class LineSegment < GeometryValue
 
   def shift(dx, dy)
     LineSegment.new(x1 + dx, y1 + dy, x2 + dx, y2 + dy)
+  end
+
+  def intersect other
+    other.intersectLineSegment self
   end
 end
 
@@ -308,7 +327,4 @@ class Shift < GeometryExpression
     Shift.new(@dx, @dy, @e.preprocess_prog)
   end
 
-  def shift(dx, dy)
-    @e.shift(dx + @dx, dy + @dy)
-  end
 end
