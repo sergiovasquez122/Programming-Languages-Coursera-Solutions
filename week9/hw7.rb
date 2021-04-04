@@ -228,6 +228,18 @@ class Intersect < GeometryExpression
     @e1 = e1
     @e2 = e2
   end
+
+  def preprocess_prog
+    e1_preprocess = @e1.preprocess_prog
+    e2_preprocess = @e2.preprocess_prog
+    Intersect.new(e1_preprocess, e2_preprocess)
+  end
+
+  def eval_prog env
+    e1_eval = @e1.eval_prog env
+    e2_eval = @e2.eval_prog env
+    e1_eval.intersect e2_eval
+  end
 end
 
 class Let < GeometryExpression
