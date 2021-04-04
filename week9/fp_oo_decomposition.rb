@@ -5,13 +5,16 @@ class Value < Exp
 end
 
 # inside each class fill out the row
+# 3 methods inside each class
+# filled Row a time
+# one class per row
 class Int < Value
   attr_reader :i
   def initialize i
     @i = i
   end
 
-  def eval 
+  def eval
     self
   end
 
