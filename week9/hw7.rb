@@ -202,7 +202,16 @@ class LineSegment < GeometryValue
   end
 
   def preprocess_prog
-    self
+    if real_close_point(x1, y1, x2, y2)
+      self
+    elsif x1 < x2
+      self
+    elsif y1 < y2
+      self
+    else
+      LineSegment.new(x2, y2, x1, y1)
+    end
+
   end
 
   def shift(dx, dy)
@@ -276,5 +285,18 @@ class Shift < GeometryExpression
     @dx = dx
     @dy = dy
     @e = e
+  end
+
+  def eval_prog env
+    e1 = @e.eval_prog env
+    e1.shift(@dx, @dy)
+  end
+
+  def preprocess_prog
+    Shift.new(@dx, @dy, @e.preprocess_prog)
+  end
+
+  def shift(dx, dy)
+    @e.shift(dx + @dx, dy + @dy)
   end
 end
