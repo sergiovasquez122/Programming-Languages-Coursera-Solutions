@@ -205,7 +205,6 @@ fun eval_prog (e,env) =
                                                LineSegment(x1 + deltaX, y1 + deltaY, x2 + deltaX, y2 + deltaY)
                                            | _ => raise BadProgram("Subexpression not of five components")
                                      end
-(* CHANGE: Add function preprocess_prog of type geom_exp -> geom_exp *)
 fun preprocess_prog(e) = 
   case e of 
        NoPoints => NoPoints
