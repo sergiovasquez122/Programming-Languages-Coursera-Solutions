@@ -26,7 +26,6 @@ exception Impossible of string
 
 (* helper functions for comparing real numbers since rounding means
    we should never compare for equality *)
-
 val epsilon = 0.00001
 
 fun real_close (r1,r2) =
@@ -207,3 +206,19 @@ fun eval_prog (e,env) =
                                            | _ => raise BadProgram("Subexpression not of five components")
                                      end
 (* CHANGE: Add function preprocess_prog of type geom_exp -> geom_exp *)
+fun preprocess_prog(e) = 
+  case e of 
+       NoPoints => NoPoints
+     | Point _ => e
+     | Line _ => e
+     | VerticalLine _ => e
+     | LineSegment(x1, y1, x2, y2) => (case real_close_point (x1, x2) (y1, y2) of 
+                                           true => Point(x1, y1)
+                                         | false => if x1 < x2 then e 
+                                                    else if y1 < y2 then e
+                                                    else LineSegment(x2, y2, x1,
+                                                    y1)) 
+    | Intersect(e1, e2) => Intersect (preprocess_prog e1, preprocess_prog e2)
+    | Shift(deltaX, deltaY, e1) => Shift(deltaX, deltaY, preprocess_prog e1)
+    | Var _ => e
+    | Let (s, e1, e2) => Let (s, preprocess_prog e1, preprocess_prog e2)
