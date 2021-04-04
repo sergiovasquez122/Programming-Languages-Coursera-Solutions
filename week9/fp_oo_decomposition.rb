@@ -25,6 +25,21 @@ class Int < Value
   def hasZero
     i == 0
   end
+  def add_values v # first dispatch
+    v.addInt self
+  end
+
+  def addInt v # second dispatch: v is an int
+    return Int.new(v.i + i)
+  end
+
+  def addString v # second dispatch: v is an String
+    return MyString.new(v.s + i.to_s)
+  end
+
+  def addRational v # second dispatch: v is an Rational
+    return MyRational.new(i * v.j + v.i, v.j)
+  end
 end
 
 class Negate < Exp
@@ -86,5 +101,37 @@ class Mult < Exp
 
   def noNegConstants
     Mult.new(e1.noNegConstants, e2.noNegConstants)
+  end
+end
+
+class MyString < Exp
+  def add_values v # first dispatch
+      v.addString self
+  end
+
+  def add_int v # second dispatch: v is an int
+      MyString.new(v.i.to_s + s)
+  end
+
+  def add_rational v # second dispatch: v is an Rational
+      MyRational.new(v.i.to_s + "/" + v.j.to_s + s)
+  end
+end
+# we have 9 cases for addition in 9 different methods
+class MyRational < Exp
+  def add_values v # first dispatch
+      v.add_rational self
+  end
+
+  def add_int v # second dispatch: v is an int
+      MyRational.new(v.i * j + i, j)
+  end
+
+  def add_string v # second dispatch: v is an rational
+      MyString.new(v.s + i.to_s + "/" + j.to_s)
+  end
+
+  def add_rational v # second dispatch: v is an Rational
+      MyRational.new(v.i * j + i * v.j, v.j * j)
   end
 end
