@@ -421,10 +421,14 @@ class Let < GeometryExpression
   end
 
   def eval_prog env
-    e1_evaluated = @e1.eval_prog env
-    new_env = env.clone
-    new_env.push([@s, e1_evaluated])
-    @e2.eval_prog new_env
+    env_copy = Array.new(env)
+    @pair = env_copy.assoc @s
+    if @pair == nil
+      @e2.eval_prog(env_copy.push([@s, @e1.eval_prog(env)]))
+    else
+      @pair[1] = @e1.eval_prog(env)
+      @e2.eval_prog(env_copy)
+    end
   end
 end
 
