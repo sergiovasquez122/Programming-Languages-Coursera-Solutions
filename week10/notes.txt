@@ -1,0 +1,93 @@
+build up key idas from first principles 
+- in pseudocode becaue
+	- no time for another language
+	- simple to first show subtyping without objects
+
+
+then, a few segments from now:
+
+- How does subtyping relate to types for oop?
+	- brief sketch only
+
+- what are the relative strengths of subtyping and generics?
+
+record creation
+
+{f1 = e1, f2 = e2, ..., fn = en} -- evaluate ei, make a record
+
+- record field access
+
+e.f  -- evaluate e to record v with f field, get contents of f field
+
+record field update
+
+e.f = e2 evaluate e1 to a record v1 and e2 to a value v2; change v1's f field to v2; return v2
+
+record types what fields a record has and type for each field
+
+{f1 : t1, f2 : t2, ..., fn : tn}
+
+type-checking expressions:
+
+- if e1 has type t1, ..., en has type tn
+  then {f1 = e1, ..., fn = en} has type {f1 : t1, ..., fn :tn}
+
+-if e1 has a record type containing f : t and e2 has type t, then e1.f has type f
+
+this is safe
+
+these evaluation rules and typing rules prevent ever tyring to 
+
+fun distToOrigin (p : {x : real, y : real}) = 
+	Math.sqrt(p.x * p.x + p.y * p.y)
+
+val pythag : (x : real, y : real) = {x = 3.0, y = 4.0}
+val five : rea = distToOrigin(pythag)
+
+{x : real, y:real, color : string} does not type-check
+
+would like to make our type-checker more flexible to make this type-check.
+
+natural idea: if an expression has type
+
+{f1 : t1, f2 : t2, ..., fn : tn}
+
+then it can also have a type with some fields removed
+
+this is what we need to type-check this function calls
+
+fun distToOrigin {p : {x : real,y : real}} = ...
+fun makePurple {p : {color : string}} = ... 
+
+val c : {x:real, y : real, color : string} = {x = 3.0, y = 4.0, color = "green"}
+
+val _ = distToOrigin(c)
+val _ = makePurple(c)
+
+we need a type system with a you can forget fields.
+
+the subtype relation
+
+a programming language already has a lot of typing rules and we do not want to change them
+
+- example: the type of an actual function arguments must equal the type of the function parameter
+
+- we can do this by adding 'just two things to our language'
+- subtyping: write t1 <:t2 for t1 is a subtype of t2
+- on new typing rules that uses subtyping:
+if e has type t1 and t1 <: t2
+	then e also has type t2
+
+now all we need to do is define t1 <: t2
+
+- Misconception: if we are making a new language, we can have whatever typing and subtyping rules we want
+
+- our typing rules were sound before we added subtyping
+	- we should keep it that way
+
+-principliple of substitutability: if t1 <: t2 then a value of type t1 must be usuable of type t2
+
+
+contravariance
+
+if t3 <: t1 and t2 <: t4 then t1->t2 <: t3 -> t4
